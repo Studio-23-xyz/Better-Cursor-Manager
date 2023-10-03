@@ -1,6 +1,6 @@
 {
     "name": "com.studio23.ss2.bettercursormanager",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "displayName": "Better Cursor Manager",
     "description": "Streamline and enhance your game's inventory management with our Unity package. This powerful tool simplifies the creation and management of player inventories, making it easy to handle items, equipment, and resources, allowing you to focus on crafting the ultimate gaming experience.",
     "unity": "2021.3",
