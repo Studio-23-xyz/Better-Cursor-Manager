@@ -8,6 +8,5 @@ namespace Studio23.SS2.BetterCursorManager.Data
         public Sprite CursorTexture;
         public Vector2 HotSpot = Vector2.zero;
         public Vector2 PixelSize = new(32, 32);
-        public float PixelScale = 1 / 6f;
     }
 }
