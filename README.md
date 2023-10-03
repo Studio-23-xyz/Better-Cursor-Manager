@@ -6,45 +6,45 @@ This custom cursor system for Unity allows you to easily implement and manage cu
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-   - [Creating CursorSettings](#creating-cursorsettings)
-   - [Creating a Cursor Manager](#creating-a-cursor-manager)
-   - [Setting Up UI Elements](#setting-up-ui-elements)
+   - [Creating Cursor Data](#Creating CursorData)
+   - [Creating a CursorCanvas prefab](#Installing CursorCanvas)
+   - [Setting Up CursorManager Script](#Using CursorManager script)
 3. [Example](#example)
 4. [License](#license)
 
 ## Installation
 
-1. Clone or download the repository.
-
-2. In your Unity project, navigate to `Assets > Import Package > Custom Package...`.
-
-3. Select the downloaded package file (`CustomCursorSystem.unitypackage`) and click **Import**.
-
+### Install via Git URL
+You can also use the "Install from Git URL" option from Unity Package Manager to install the package.
+```
+https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm
+```
 ## Usage
 
-### Creating CursorSettings
+### Creating CursorData
 
-1. In the Unity Editor, right-click in your project's Assets folder.
+1. In the Unity Editor menu window, Studio-23 -> Better Cursor -> Create CursorData.
 
-2. Select `Create > CustomCursor > CursorSettings` to create a new CursorSettings asset.
+2. A editor window will popup to create new cursor data. Place any sprite in "Cursor Texture" field.
 
-3. Configure the CursorSettings asset with the desired cursor texture, hotspot, and pixel size.
+3. In the "Hotspot" field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]
 
-### Creating a Cursor Manager
+4. In the "Pixel Size" field, put the preferable cursor's width and height [default value should be 64 , 64]
 
-1. Create an empty GameObject in your scene to manage cursors.
+3. A "CursorCanvas" gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.
 
-2. Attach the `CursorManager` script to the GameObject.
+### Installing CursorCanvas
 
-3. In the Inspector, assign the `defaultCursor` field with the default CursorSettings asset you created earlier. This cursor will be used when no custom cursor is set.
+1. In the Unity Editor menu window, Studio-23 -> Better Cursor -> Install Cursor .
 
-### Setting Up UI Elements
+2. A "CursorCanvas" prefab will be generated in scene hierarchy. You only need to do this procedure once as this prefab will be persisted when scene changes. This prefab will have canvas component with a sorting order 200 so that it will stay on top of every canvas.
 
-1. Create UI elements, buttons, or triggers in your scene.
+### Using CursorManager script
 
-2. Create scripts or use Unity's UI events to trigger cursor changes.
+1. The CursorCanvas gameobject will contain a CursorManager script. This script has instances. Use that instances to call function from this script.
 
-3. Call the `SetCursor` method of the `CursorManager` with the desired `CursorSettings` asset to change the cursor when a UI element is interacted with.
+2. Cursor manager has a default cursor field in which already predefined cursordata is assigned. You can assign your created custom cursordata in this field.
+
 
 ```csharp
 // Example code to change the cursor when a button is clicked:
