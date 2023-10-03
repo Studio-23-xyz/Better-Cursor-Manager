@@ -6,78 +6,45 @@ This custom cursor system for Unity allows you to easily implement and manage cu
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-   - [Creating Cursor Data](#Creating CursorData)
-   - [Creating a CursorCanvas prefab](#Installing CursorCanvas)
-   - [Setting Up CursorManager Script](#Using CursorManager script)
+   - [Creating CursorSettings](#creating-cursorsettings)
+   - [Creating a Cursor Manager](#creating-a-cursor-manager)
+   - [Setting Up UI Elements](#setting-up-ui-elements)
 3. [Example](#example)
 4. [License](#license)
 
-##Installation
-###Install via OpenUPM
-The package is available on the [openupm registry](https://openupm.com). It's recommended to install it via [openupm-cli](https://github.com/openupm/openupm-cli).
+## Installation
 
-```
-openupm add com.studio23.ss2.bettercursormanager
-```
+1. Clone or download the repository.
 
-### Install via Git URL
+2. In your Unity project, navigate to `Assets > Import Package > Custom Package...`.
 
-Open *Packages/manifest.json* with your favorite text editor. Add the following line to the dependencies block.
-
-```json
-{
-    "scopedRegistries": [
-        {
-            "name": "package.openupm.com",
-            "url": "https://package.openupm.com",
-            "scopes": [
-                "com.studio23.ss2.bettercursormanager"
-            ]
-        }
-    ],
-    "dependencies": {
-        "com.studio23.ss2.bettercursormanager": "1.0.1"
-    }
-}
-```
-
-Notice: Unity Package Manager records the current commit to a lock entry of the *manifest.json*. To update to the latest version, change the hash value manually or remove the lock entry to resolve the package.
-
-```json
-    "lock": {
-      "com.studio23.ss2.bettercursormanagerr": {
-        "revision": "master",
-        "hash": "..."
-      }
-    }
-```
+3. Select the downloaded package file (`CustomCursorSystem.unitypackage`) and click **Import**.
 
 ## Usage
 
-### Creating CursorData
+### Creating CursorSettings
 
-1. In the Unity Editor menu window, Studio-23 -> Better Cursor -> Create CursorData.
+1. In the Unity Editor, right-click in your project's Assets folder.
 
-2. A editor window will popup to create new cursor data. Place any sprite in "Cursor Texture" field.
+2. Select `Create > CustomCursor > CursorSettings` to create a new CursorSettings asset.
 
-3. In the "Hotspot" field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]
+3. Configure the CursorSettings asset with the desired cursor texture, hotspot, and pixel size.
 
-4. In the "Pixel Size" field, put the preferable cursor's width and height [default value should be 64 , 64]
+### Creating a Cursor Manager
 
-3. A "CursorCanvas" gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.
+1. Create an empty GameObject in your scene to manage cursors.
 
-### Installing CursorCanvas
+2. Attach the `CursorManager` script to the GameObject.
 
-1. In the Unity Editor menu window, Studio-23 -> Better Cursor -> Install Cursor .
+3. In the Inspector, assign the `defaultCursor` field with the default CursorSettings asset you created earlier. This cursor will be used when no custom cursor is set.
 
-2. A "CursorCanvas" prefab will be generated in scene hierarchy. You only need to do this procedure once as this prefab will be persisted when scene changes. This prefab will have canvas component with a sorting order 200 so that it will stay on top of every canvas.
+### Setting Up UI Elements
 
-### Using CursorManager script
+1. Create UI elements, buttons, or triggers in your scene.
 
-1. The CursorCanvas gameobject will contain a CursorManager script. This script has instances. Use that instances to call function from this script.
+2. Create scripts or use Unity's UI events to trigger cursor changes.
 
-2. Cursor manager has a default cursor field in which already predefined cursordata is assigned. You can assign your created custom cursordata in this field.
-
+3. Call the `SetCursor` method of the `CursorManager` with the desired `CursorSettings` asset to change the cursor when a UI element is interacted with.
 
 ```csharp
 // Example code to change the cursor when a button is clicked:
