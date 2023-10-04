@@ -29,7 +29,7 @@ https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm
 
 3. In the "Hotspot" field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]
 
-4. In the "Pixel Size" field, put the preferable cursor's width and height [default value should be 64 , 64]
+4. In the "Pixel Size" field, put the preferable cursor's width and height [default value should be 32 , 32]
 
 3. A "CursorCanvas" gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.
 
@@ -51,4 +51,9 @@ https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm
 public void OnButtonClick()
 {
     CursorManager.Instance.ToggleCursor(true);
+}
+
+public void ChangeCursorLockState()
+{
+     CursorManager.Instance.ChangeCursorLockState(true);
 }

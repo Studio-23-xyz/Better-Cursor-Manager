@@ -8,7 +8,7 @@ namespace Studio23.SS2.BetterCursorManager.Editor
     {
         private Sprite cursorTexture;
         private Vector2 hotspot = new Vector2(.3f, .8f);
-        private Vector2 pixelSize = new Vector2(64, 64);
+        private Vector2 pixelSize = new Vector2(32, 32);
 
         [MenuItem("Studio-23/BetterCursor/Create CursorData", false, 1)]
         public static void ShowWindow()
