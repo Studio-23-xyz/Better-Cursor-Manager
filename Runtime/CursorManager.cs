@@ -28,9 +28,9 @@ namespace Studio23.SS2.BetterCursorManager.Core
 
         public void Initialize()
         {
-            Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = false;
             SetCursor(DefaultCursor);
+            ChangeCursorLockState(false);
         }
 
         private void FixedUpdate()
@@ -68,6 +68,22 @@ namespace Studio23.SS2.BetterCursorManager.Core
         public void ToggleCursor(bool state)
         {
             CursorRectTransform.gameObject.SetActive(state);
+        }
+
+        public void ChangeCursorLockState(bool inGame)
+        {
+            if (inGame)
+                Cursor.lockState = CursorLockMode.Locked;
+            else
+            {
+                #if UNITY_STANDALONE
+                        // Code for standalone platforms
+                        Cursor.lockState = CursorLockMode.Confined;
+                #elif UNITY_WSA
+                        // Code for Windows Store (UWP)
+                        Cursor.lockState = CursorLockMode.None;
+                #endif
+            }
         }
     }
 }
