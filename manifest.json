@@ -1,0 +1,151 @@
+{
+  "sitemap": {
+    "baseUrl": "https://studio-23-xyz.github.io/Better-Cursor-Manager/"
+  },
+  "source_base_path": "/home/runner/work/Better-Cursor-Manager/Better-Cursor-Manager/Documentation~",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CursorData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "manual/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "manual/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

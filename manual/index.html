@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Custom Cursor System for Unity |  |  </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Custom Cursor System for Unity |  |  ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      <meta name="docfx:disablenewtab" content="true">
+      
+      <meta name="docfx:docurl" content="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Documentation~/manual/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="landing" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="custom-cursor-system-for-unity">Custom Cursor System for Unity</h1>
+
+<p>This custom cursor system for Unity allows you to easily implement and manage custom cursors with configurable textures, hotspots, and pixel sizes. This README provides instructions on how to use this library in your Unity projects.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li>[Creating Cursor Data](#Creating CursorData)</li>
+<li>[Creating a CursorCanvas prefab](#Installing CursorCanvas)</li>
+<li>[Setting Up CursorManager Script](#Using CursorManager script)</li>
+</ul>
+</li>
+<li><a href="#example">Example</a></li>
+<li><a href="#license">License</a></li>
+</ol>
+<h2 id="installation">Installation</h2>
+<h3 id="install-via-git-url">Install via Git URL</h3>
+<p>You can also use the &quot;Install from Git URL&quot; option from Unity Package Manager to install the package.</p>
+<pre><code>https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="creating-cursordata">Creating CursorData</h3>
+<ol>
+<li><p>In the Unity Editor menu window, Studio-23 -&gt; Better Cursor -&gt; Create CursorData.</p>
+</li>
+<li><p>A editor window will popup to create new cursor data. Place any sprite in &quot;Cursor Texture&quot; field.</p>
+</li>
+<li><p>In the &quot;Hotspot&quot; field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]</p>
+</li>
+<li><p>In the &quot;Pixel Size&quot; field, put the preferable cursor's width and height [default value should be 32 , 32]</p>
+</li>
+<li><p>A &quot;CursorCanvas&quot; gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.</p>
+</li>
+</ol>
+<h3 id="installing-cursorcanvas">Installing CursorCanvas</h3>
+<ol>
+<li><p>In the Unity Editor menu window, Studio-23 -&gt; Better Cursor -&gt; Install Cursor .</p>
+</li>
+<li><p>A &quot;CursorCanvas&quot; prefab will be generated in scene hierarchy. You only need to do this procedure once as this prefab will be persisted when scene changes. This prefab will have canvas component with a sorting order 200 so that it will stay on top of every canvas.</p>
+</li>
+</ol>
+<h3 id="using-cursormanager-script">Using CursorManager script</h3>
+<ol>
+<li><p>The CursorCanvas gameobject will contain a CursorManager script. This script has instances. Use that instances to call function from this script.</p>
+</li>
+<li><p>Cursor manager has a default cursor field in which already predefined cursordata is assigned. You can assign your created custom cursordata in this field.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">// Example code to change the cursor when a button is clicked:
+public void OnButtonClick()
+{
+    CursorManager.Instance.ToggleCursor(true);
+}
+
+public void ChangeCursorLockState()
+{
+     CursorManager.Instance.ChangeCursorLockState(true);
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Documentation~/manual/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made by <a href="https://github.com/Studio-23-xyz" target="_blank">Studio-23-xyz</a> using <a href="https://dotnet.github.io/docfx" target="_blank">DocFX</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

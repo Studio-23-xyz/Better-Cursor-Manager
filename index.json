@@ -1,0 +1,52 @@
+{
+  "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html",
+    "title": "Class CursorManager | |",
+    "keywords": "Class CursorManager Namespace Studio23.SS2.BetterCursorManager.Core public class CursorManager : MonoBehaviour Inheritance System.Object CursorManager Fields Canvas public Canvas Canvas Field Value Canvas CursorRectTransform public RectTransform CursorRectTransform Field Value RectTransform DefaultCursor public CursorData DefaultCursor Field Value CursorData Instance public static CursorManager Instance Field Value CursorManager Methods ChangeCursorLockState(bool) public void ChangeCursorLockState(bool inGame) Parameters inGame bool Initialize() public void Initialize() ToggleCursor(bool) public void ToggleCursor(bool state) Parameters state bool"
+  },
+  "api/Studio23.SS2.BetterCursorManager.Core.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Core.html",
+    "title": "Namespace Studio23.SS2.BetterCursorManager.Core | |",
+    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Core Classes CursorManager"
+  },
+  "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html",
+    "title": "Class CursorData | |",
+    "keywords": "Class CursorData Namespace Studio23.SS2.BetterCursorManager.Data public class CursorData : ScriptableObject Inheritance System.Object CursorData Fields CursorTexture public Sprite CursorTexture Field Value Sprite HotSpot public Vector2 HotSpot Field Value Vector2 PixelSize public Vector2 PixelSize Field Value Vector2"
+  },
+  "api/Studio23.SS2.BetterCursorManager.Data.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Data.html",
+    "title": "Namespace Studio23.SS2.BetterCursorManager.Data | |",
+    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Data Classes CursorData"
+  },
+  "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html",
+    "title": "Class BetterCursorUtility | |",
+    "keywords": "Class BetterCursorUtility Namespace Studio23.SS2.BetterCursorManager.Editor public class BetterCursorUtility : UnityEditor.Editor Inheritance System.Object BetterCursorUtility"
+  },
+  "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.html",
+    "title": "Class CursorDataEditorWindow | |",
+    "keywords": "Class CursorDataEditorWindow Namespace Studio23.SS2.BetterCursorManager.Editor public class CursorDataEditorWindow : EditorWindow Inheritance System.Object CursorDataEditorWindow Methods ShowWindow() public static void ShowWindow()"
+  },
+  "api/Studio23.SS2.BetterCursorManager.Editor.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Editor.html",
+    "title": "Namespace Studio23.SS2.BetterCursorManager.Editor | |",
+    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Editor Classes BetterCursorUtility CursorDataEditorWindow"
+  },
+  "api/index.html": {
+    "href": "api/index.html",
+    "title": "| |",
+    "keywords": "This is the documentation for the Scripting APIs of this package."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "| |",
+    "keywords": "This page redirects to the manual."
+  },
+  "manual/index.html": {
+    "href": "manual/index.html",
+    "title": "Custom Cursor System for Unity | |",
+    "keywords": "Custom Cursor System for Unity This custom cursor system for Unity allows you to easily implement and manage custom cursors with configurable textures, hotspots, and pixel sizes. This README provides instructions on how to use this library in your Unity projects. Table of Contents Installation Usage [Creating Cursor Data](#Creating CursorData) [Creating a CursorCanvas prefab](#Installing CursorCanvas) [Setting Up CursorManager Script](#Using CursorManager script) Example License Installation Install via Git URL You can also use the \"Install from Git URL\" option from Unity Package Manager to install the package. https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm Usage Creating CursorData In the Unity Editor menu window, Studio-23 -> Better Cursor -> Create CursorData. A editor window will popup to create new cursor data. Place any sprite in \"Cursor Texture\" field. In the \"Hotspot\" field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f] In the \"Pixel Size\" field, put the preferable cursor's width and height [default value should be 32 , 32] A \"CursorCanvas\" gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes. Installing CursorCanvas In the Unity Editor menu window, Studio-23 -> Better Cursor -> Install Cursor . A \"CursorCanvas\" prefab will be generated in scene hierarchy. You only need to do this procedure once as this prefab will be persisted when scene changes. This prefab will have canvas component with a sorting order 200 so that it will stay on top of every canvas. Using CursorManager script The CursorCanvas gameobject will contain a CursorManager script. This script has instances. Use that instances to call function from this script. Cursor manager has a default cursor field in which already predefined cursordata is assigned. You can assign your created custom cursordata in this field. // Example code to change the cursor when a button is clicked: public void OnButtonClick() { CursorManager.Instance.ToggleCursor(true); } public void ChangeCursorLockState() { CursorManager.Instance.ChangeCursorLockState(true); }"
+  }
+}
