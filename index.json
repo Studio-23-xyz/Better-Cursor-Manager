@@ -1,13 +1,33 @@
 {
+  "api/Global.CameraRotator.html": {
+    "href": "api/Global.CameraRotator.html",
+    "title": "Class CameraRotator | |",
+    "keywords": "Class CameraRotator Namespace Global public class CameraRotator : MonoBehaviour Inheritance System.Object CameraRotator Fields MainCamera public Camera MainCamera Field Value Camera RotationSpeed public float RotationSpeed Field Value float"
+  },
+  "api/Global.CrosshairCursorDataEditorWindow.html": {
+    "href": "api/Global.CrosshairCursorDataEditorWindow.html",
+    "title": "Class CrosshairCursorDataEditorWindow | |",
+    "keywords": "Class CrosshairCursorDataEditorWindow Namespace Global public class CrosshairCursorDataEditorWindow : EditorWindow Inheritance System.Object CrosshairCursorDataEditorWindow Methods ShowWindow() public static void ShowWindow()"
+  },
+  "api/Global.html": {
+    "href": "api/Global.html",
+    "title": "Namespace | |",
+    "keywords": "Namespace Classes CameraRotator CrosshairCursorDataEditorWindow"
+  },
   "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html": {
     "href": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html",
     "title": "Class CursorManager | |",
-    "keywords": "Class CursorManager Namespace Studio23.SS2.BetterCursorManager.Core public class CursorManager : MonoBehaviour Inheritance System.Object CursorManager Fields Canvas public Canvas Canvas Field Value Canvas CursorRectTransform public RectTransform CursorRectTransform Field Value RectTransform DefaultCursor public CursorData DefaultCursor Field Value CursorData Instance public static CursorManager Instance Field Value CursorManager Methods ChangeCursorLockState(bool) public void ChangeCursorLockState(bool inGame) Parameters inGame bool Initialize() public void Initialize() ToggleCursor(bool) public void ToggleCursor(bool state) Parameters state bool"
+    "keywords": "Class CursorManager Namespace Studio23.SS2.BetterCursorManager.Core public class CursorManager : MonoBehaviour Inheritance System.Object CursorManager Fields Instance public static CursorManager Instance Field Value CursorManager Methods ChangeCursorLockState(bool) This method can be used to change the cursor lock state. public void ChangeCursorLockState(bool inGame) Parameters inGame bool ChangeIntoCrosshair() Change default mouse Cursor mode into Crosshair mode. If crosshair or mouse cursor data not found it will load into default mouse cursor. public void ChangeIntoCrosshair() ChangeIntoCursor() Change crosshair mode to mouse cursor mode. If crosshair or mouse cursor data not found it will load into default mouse cursor. public void ChangeIntoCursor() Initialize() public void Initialize() SetCrosshair(CrosshairCursorData) This method will set the data according to the CrosshairCursorData Scriptable Class. Calling this method will change the overall data of the crosshair public void SetCrosshair(CrosshairCursorData crosshairCursorData) Parameters crosshairCursorData CrosshairCursorData SetCursor(CursorData) This method will set the data according to the CursorData Scriptable Class. Calling this method will change the overall data of the cursor public void SetCursor(CursorData cursorData) Parameters cursorData CursorData ToggleCursor(bool) Enable or disable Cursor image public void ToggleCursor(bool state) Parameters state bool"
   },
   "api/Studio23.SS2.BetterCursorManager.Core.html": {
     "href": "api/Studio23.SS2.BetterCursorManager.Core.html",
     "title": "Namespace Studio23.SS2.BetterCursorManager.Core | |",
     "keywords": "Namespace Studio23.SS2.BetterCursorManager.Core Classes CursorManager"
+  },
+  "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html": {
+    "href": "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html",
+    "title": "Class CrosshairCursorData | |",
+    "keywords": "Class CrosshairCursorData Namespace Studio23.SS2.BetterCursorManager.Data public class CrosshairCursorData : ScriptableObject Inheritance System.Object CrosshairCursorData Fields CrosshairSprite public Sprite CrosshairSprite Field Value Sprite"
   },
   "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html": {
     "href": "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html",
@@ -17,7 +37,7 @@
   "api/Studio23.SS2.BetterCursorManager.Data.html": {
     "href": "api/Studio23.SS2.BetterCursorManager.Data.html",
     "title": "Namespace Studio23.SS2.BetterCursorManager.Data | |",
-    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Data Classes CursorData"
+    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Data Classes CrosshairCursorData CursorData"
   },
   "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html": {
     "href": "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html",
@@ -39,10 +59,20 @@
     "title": "| |",
     "keywords": "This is the documentation for the Scripting APIs of this package."
   },
+  "changelog/CHANGELOG.html": {
+    "href": "changelog/CHANGELOG.html",
+    "title": "Changelog | |",
+    "keywords": "Changelog [v1.0.6] - 2023-11-06 New Features Introduced a new cursor management system with customizable cursor and crosshair options. Added a GUI for creating crosshair cursor data assets. Implemented a new camera rotation script based on mouse input. Improvements Enhanced cursor management with additional methods for cursor visibility and mode switching. Fixed Added checks to ensure cursor data is not null before loading. Tests Modified demo scene with changes in various Unity objects and components."
+  },
   "index.html": {
     "href": "index.html",
     "title": "| |",
     "keywords": "This page redirects to the manual."
+  },
+  "license/LICENSE.html": {
+    "href": "license/LICENSE.html",
+    "title": "| |",
+    "keywords": "MIT License Copyright (c) 2023 Studio-23 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
   },
   "manual/index.html": {
     "href": "manual/index.html",

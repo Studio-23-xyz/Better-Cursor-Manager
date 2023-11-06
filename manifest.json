@@ -15,6 +15,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Global.CameraRotator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.CameraRotator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.CrosshairCursorDataEditorWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.CrosshairCursorDataEditorWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Global.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Global.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.yml",
       "output": {
         ".html": {
@@ -29,6 +59,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Studio23.SS2.BetterCursorManager.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html"
         }
       },
       "version": ""
@@ -107,6 +147,29 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "changelog/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "changelog/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "changelog/toc.html"
+        },
+        ".json": {
+          "relative_path": "changelog/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
       "log_codes": [
         "InvalidFileLink"
       ],
@@ -115,6 +178,29 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "license/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "license/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "license/toc.html"
+        },
+        ".json": {
+          "relative_path": "license/toc.json"
         }
       },
       "version": ""

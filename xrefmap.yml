@@ -1,6 +1,46 @@
 ### YamlMime:XRefMap
 sorted: true
 references:
+- uid: Global
+  name: ''
+  href: api/Global.html
+- uid: Global.CameraRotator
+  name: CameraRotator
+  href: api/Global.CameraRotator.html
+  commentId: T:Global.CameraRotator
+  fullName: CameraRotator
+  nameWithType: CameraRotator
+- uid: Global.CameraRotator.MainCamera
+  name: MainCamera
+  href: api/Global.CameraRotator.html#Global_CameraRotator_MainCamera
+  commentId: F:Global.CameraRotator.MainCamera
+  fullName: CameraRotator.MainCamera
+  nameWithType: CameraRotator.MainCamera
+- uid: Global.CameraRotator.RotationSpeed
+  name: RotationSpeed
+  href: api/Global.CameraRotator.html#Global_CameraRotator_RotationSpeed
+  commentId: F:Global.CameraRotator.RotationSpeed
+  fullName: CameraRotator.RotationSpeed
+  nameWithType: CameraRotator.RotationSpeed
+- uid: Global.CrosshairCursorDataEditorWindow
+  name: CrosshairCursorDataEditorWindow
+  href: api/Global.CrosshairCursorDataEditorWindow.html
+  commentId: T:Global.CrosshairCursorDataEditorWindow
+  fullName: CrosshairCursorDataEditorWindow
+  nameWithType: CrosshairCursorDataEditorWindow
+- uid: Global.CrosshairCursorDataEditorWindow.ShowWindow
+  name: ShowWindow()
+  href: api/Global.CrosshairCursorDataEditorWindow.html#Global_CrosshairCursorDataEditorWindow_ShowWindow
+  commentId: M:Global.CrosshairCursorDataEditorWindow.ShowWindow
+  fullName: CrosshairCursorDataEditorWindow.ShowWindow()
+  nameWithType: CrosshairCursorDataEditorWindow.ShowWindow()
+- uid: Global.CrosshairCursorDataEditorWindow.ShowWindow*
+  name: ShowWindow
+  href: api/Global.CrosshairCursorDataEditorWindow.html#Global_CrosshairCursorDataEditorWindow_ShowWindow_
+  commentId: Overload:Global.CrosshairCursorDataEditorWindow.ShowWindow
+  isSpec: "True"
+  fullName: CrosshairCursorDataEditorWindow.ShowWindow
+  nameWithType: CrosshairCursorDataEditorWindow.ShowWindow
 - uid: Studio23.SS2.BetterCursorManager.Core
   name: Studio23.SS2.BetterCursorManager.Core
   href: api/Studio23.SS2.BetterCursorManager.Core.html
@@ -13,12 +53,6 @@ references:
   commentId: T:Studio23.SS2.BetterCursorManager.Core.CursorManager
   fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager
   nameWithType: CursorManager
-- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.Canvas
-  name: Canvas
-  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_Canvas
-  commentId: F:Studio23.SS2.BetterCursorManager.Core.CursorManager.Canvas
-  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.Canvas
-  nameWithType: CursorManager.Canvas
 - uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(System.Boolean)
   name: ChangeCursorLockState(bool)
   href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeCursorLockState_System_Boolean_
@@ -35,18 +69,32 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState
   nameWithType: CursorManager.ChangeCursorLockState
-- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.CursorRectTransform
-  name: CursorRectTransform
-  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_CursorRectTransform
-  commentId: F:Studio23.SS2.BetterCursorManager.Core.CursorManager.CursorRectTransform
-  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.CursorRectTransform
-  nameWithType: CursorManager.CursorRectTransform
-- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.DefaultCursor
-  name: DefaultCursor
-  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_DefaultCursor
-  commentId: F:Studio23.SS2.BetterCursorManager.Core.CursorManager.DefaultCursor
-  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.DefaultCursor
-  nameWithType: CursorManager.DefaultCursor
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCrosshair
+  name: ChangeIntoCrosshair()
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeIntoCrosshair
+  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCrosshair
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCrosshair()
+  nameWithType: CursorManager.ChangeIntoCrosshair()
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCrosshair*
+  name: ChangeIntoCrosshair
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeIntoCrosshair_
+  commentId: Overload:Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCrosshair
+  isSpec: "True"
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCrosshair
+  nameWithType: CursorManager.ChangeIntoCrosshair
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCursor
+  name: ChangeIntoCursor()
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeIntoCursor
+  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCursor
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCursor()
+  nameWithType: CursorManager.ChangeIntoCursor()
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCursor*
+  name: ChangeIntoCursor
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeIntoCursor_
+  commentId: Overload:Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCursor
+  isSpec: "True"
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCursor
+  nameWithType: CursorManager.ChangeIntoCursor
 - uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.Initialize
   name: Initialize()
   href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_Initialize
@@ -66,6 +114,32 @@ references:
   commentId: F:Studio23.SS2.BetterCursorManager.Core.CursorManager.Instance
   fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.Instance
   nameWithType: CursorManager.Instance
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCrosshair(Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData)
+  name: SetCrosshair(CrosshairCursorData)
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_SetCrosshair_Studio23_SS2_BetterCursorManager_Data_CrosshairCursorData_
+  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCrosshair(Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData)
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCrosshair(Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData)
+  nameWithType: CursorManager.SetCrosshair(CrosshairCursorData)
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCrosshair*
+  name: SetCrosshair
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_SetCrosshair_
+  commentId: Overload:Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCrosshair
+  isSpec: "True"
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCrosshair
+  nameWithType: CursorManager.SetCrosshair
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCursor(Studio23.SS2.BetterCursorManager.Data.CursorData)
+  name: SetCursor(CursorData)
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_SetCursor_Studio23_SS2_BetterCursorManager_Data_CursorData_
+  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCursor(Studio23.SS2.BetterCursorManager.Data.CursorData)
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCursor(Studio23.SS2.BetterCursorManager.Data.CursorData)
+  nameWithType: CursorManager.SetCursor(CursorData)
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCursor*
+  name: SetCursor
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_SetCursor_
+  commentId: Overload:Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCursor
+  isSpec: "True"
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCursor
+  nameWithType: CursorManager.SetCursor
 - uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor(System.Boolean)
   name: ToggleCursor(bool)
   href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursor_System_Boolean_
@@ -88,6 +162,18 @@ references:
   commentId: N:Studio23.SS2.BetterCursorManager.Data
   fullName: Studio23.SS2.BetterCursorManager.Data
   nameWithType: Studio23.SS2.BetterCursorManager.Data
+- uid: Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData
+  name: CrosshairCursorData
+  href: api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html
+  commentId: T:Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData
+  fullName: Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData
+  nameWithType: CrosshairCursorData
+- uid: Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.CrosshairSprite
+  name: CrosshairSprite
+  href: api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html#Studio23_SS2_BetterCursorManager_Data_CrosshairCursorData_CrosshairSprite
+  commentId: F:Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.CrosshairSprite
+  fullName: Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.CrosshairSprite
+  nameWithType: CrosshairCursorData.CrosshairSprite
 - uid: Studio23.SS2.BetterCursorManager.Data.CursorData
   name: CursorData
   href: api/Studio23.SS2.BetterCursorManager.Data.CursorData.html
