@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Packages/com.studio23.ss2.bettercursormanager/Samples/Demo1/SampleScene.unity
+    path: Assets/Packages/com.studio23.ss2.bettercursormanager/Samples/Demo1/UI.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
