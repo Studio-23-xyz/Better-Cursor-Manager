@@ -324,7 +324,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 963194227}
-  rotationSpeed: 1
+  RotationSpeed: 2
+--- !u!223 &1768455185 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 111351717896339260, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+  m_PrefabInstance: {fileID: 2000782257}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1976477776
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,9 +420,17 @@ PrefabInstance:
       value: CursorCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 111351717896339262, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: _canvas
+      value: 
+      objectReference: {fileID: 1768455185}
+    - target: {fileID: 111351717896339262, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
       propertyPath: DefaultCursor
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 111351717896339262, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: _currentCursor
+      value: 
+      objectReference: {fileID: 11400000, guid: 10a1552d8eaa24148bd00b323462c54b, type: 2}
     - target: {fileID: 111351717896339262, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
       propertyPath: _defaultCursor
       value: 
@@ -428,6 +441,10 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: bc41d25d8ec2d664897039345c5b95ee, type: 2}
     - target: {fileID: 111351717896339262, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
       propertyPath: _crosshairCursor
+      value: 
+      objectReference: {fileID: 11400000, guid: 6016a353eb94fab4aaec30cf913830e0, type: 2}
+    - target: {fileID: 111351717896339262, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: __currentCrosshair
       value: 
       objectReference: {fileID: 11400000, guid: 6016a353eb94fab4aaec30cf913830e0, type: 2}
     - target: {fileID: 111351717896339262, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}

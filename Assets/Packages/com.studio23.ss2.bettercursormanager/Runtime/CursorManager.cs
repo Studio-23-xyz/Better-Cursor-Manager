@@ -8,8 +8,8 @@ namespace Studio23.SS2.BetterCursorManager.Core
     public class CursorManager : MonoBehaviour
     {
         public static CursorManager Instance;
-        [SerializeField] private CursorData _normalCursor;
-        [SerializeField] private CrosshairCursorData _crosshairCursor;
+        [SerializeField] private CursorData _currentCursor;
+        [SerializeField] private CrosshairCursorData __currentCrosshair;
         [SerializeField] private RectTransform _cursorRectTransform;
         [SerializeField] private Canvas _canvas;
 
@@ -31,14 +31,14 @@ namespace Studio23.SS2.BetterCursorManager.Core
         public void Initialize()
         {
             // If no cursor data given, it will load into default cursor 
-            if (_normalCursor == null || _crosshairCursor == null)
+            if (_currentCursor == null || __currentCrosshair == null)
             {
                 _defaultCursor = Resources.Load<CursorData>("Default Cursor");
                 SetCursor(_defaultCursor);
             }
 
             Cursor.visible = false;
-            SetCursor(_normalCursor);
+            SetCursor(_currentCursor);
             ChangeCursorLockState(false);
         }
 
@@ -107,15 +107,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
         /// <param name="inGame"></param>
         public void ChangeCursorLockState(bool inGame)
         {
-            if (inGame)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-            else
-            {
-                // Code for standalone platforms
-                Cursor.lockState = CursorLockMode.Confined;
-            }
+            Cursor.lockState = inGame ? CursorLockMode.Locked : CursorLockMode.Confined;
         }
 
 
@@ -127,8 +119,8 @@ namespace Studio23.SS2.BetterCursorManager.Core
         public void ChangeIntoCrosshair()
         {
             // Set the cursor to the crosshair cursor texture
-            //_normalCursor.CursorTexture = _normalCursor.CrosshairCursorTexture;
-            SetCrosshair(_crosshairCursor);
+            //_currentCursor.CursorTexture = _currentCursor.CrosshairCursorTexture;
+            SetCrosshair(__currentCrosshair);
             // Lock the cursor
             ChangeCursorLockState(true);
             _cursorRectTransform.localPosition = Vector3.zero;
@@ -142,8 +134,8 @@ namespace Studio23.SS2.BetterCursorManager.Core
         public void ChangeIntoCursor()
         {
             // Set the cursor to the crosshair cursor texture
-            //_normalCursor.CursorTexture = _normalCursor.CrosshairCursorTexture;
-            SetCursor(_normalCursor);
+            //_currentCursor.CursorTexture = _currentCursor.CrosshairCursorTexture;
+            SetCursor(_currentCursor);
             // Lock the cursor
             ChangeCursorLockState(false);
         }
