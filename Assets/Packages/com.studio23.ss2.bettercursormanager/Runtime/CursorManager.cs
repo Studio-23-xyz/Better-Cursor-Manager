@@ -8,10 +8,12 @@ namespace Studio23.SS2.BetterCursorManager.Core
     public class CursorManager : MonoBehaviour
     {
         public static CursorManager Instance;
-        public CursorData DefaultCursor;
-        public RectTransform CursorRectTransform;
-        public Canvas Canvas;
+        [SerializeField] private CursorData _currentCursor;
+        [SerializeField] private CrosshairCursorData __currentCrosshair;
+        [SerializeField] private RectTransform _cursorRectTransform;
+        [SerializeField] private Canvas _canvas;
 
+        private CursorData _defaultCursor;
 
         private void Awake()
         {
@@ -21,15 +23,22 @@ namespace Studio23.SS2.BetterCursorManager.Core
             DontDestroyOnLoad(this);
         }
 
-        void Start()
+        private void Start()
         {
             Initialize();
         }
 
         public void Initialize()
         {
+            // If no cursor data given, it will load into default cursor 
+            if (_currentCursor == null || __currentCrosshair == null)
+            {
+                _defaultCursor = Resources.Load<CursorData>("Default Cursor");
+                SetCursor(_defaultCursor);
+            }
+
             Cursor.visible = false;
-            SetCursor(DefaultCursor);
+            SetCursor(_currentCursor);
             ChangeCursorLockState(false);
         }
 
@@ -40,50 +49,96 @@ namespace Studio23.SS2.BetterCursorManager.Core
 
         private void UpdateCursorPosition()
         {
+            if (Cursor.lockState == CursorLockMode.Locked) return;
+
             // Get the mouse position in screen space.
-            Vector2 mousePosition = Mouse.current.position.ReadValue();
+            var mousePosition = Mouse.current.position.ReadValue();
 
             // Convert the screen space mouse position to the local position of the canvas.
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                Canvas.transform as RectTransform,
+                _canvas.transform as RectTransform,
                 mousePosition,
-                Canvas.worldCamera,
-                out Vector2 localMousePosition
+                _canvas.worldCamera,
+                out var localMousePosition
             );
 
             // Set the UI Image's position to follow the mouse.
-            CursorRectTransform.localPosition = localMousePosition;
-
+            _cursorRectTransform.localPosition = localMousePosition;
         }
 
-        private void SetCursor(CursorData cursorData)
+        /// <summary>
+        ///     This method will set the data according to the CursorData Scriptable Class. Calling this method will change the
+        ///     overall data of the cursor
+        /// </summary>
+        /// <param name="cursorData"></param>
+        public void SetCursor(CursorData cursorData)
         {
             if (cursorData == null) return;
-            CursorRectTransform.GetComponent<Image>().sprite = cursorData.CursorTexture;
-            CursorRectTransform.sizeDelta = cursorData.PixelSize;
-            CursorRectTransform.pivot = cursorData.HotSpot;
+            _cursorRectTransform.GetComponent<Image>().sprite = cursorData.CursorTexture;
+            _cursorRectTransform.sizeDelta = cursorData.PixelSize;
+            _cursorRectTransform.pivot = cursorData.HotSpot;
             UpdateCursorPosition();
         }
 
-        public void ToggleCursor(bool state)
+        /// <summary>
+        ///     This method will set the data according to the CrosshairCursorData Scriptable Class. Calling this method will
+        ///     change the overall data of the crosshair
+        /// </summary>
+        /// <param name="crosshairCursorData"></param>
+        public void SetCrosshair(CrosshairCursorData crosshairCursorData)
         {
-            CursorRectTransform.gameObject.SetActive(state);
+            if (crosshairCursorData == null) return;
+            _cursorRectTransform.GetComponent<Image>().sprite = crosshairCursorData.CrosshairSprite;
         }
 
+        /// <summary>
+        /// Enable or disable Cursor image 
+        /// </summary>
+        /// <param name="state"></param>
+        public void ToggleCursor(bool state)
+        {
+            _cursorRectTransform.gameObject.SetActive(state);
+        }
+
+
+        /// <summary>
+        /// This method can be used to change the cursor lock state. 
+        /// </summary>
+        /// <param name="inGame"></param>
         public void ChangeCursorLockState(bool inGame)
         {
-            if (inGame)
-                Cursor.lockState = CursorLockMode.Locked;
-            else
-            {
-                #if UNITY_STANDALONE
-                        // Code for standalone platforms
-                        Cursor.lockState = CursorLockMode.Confined;
-                #elif UNITY_WSA
-                        // Code for Windows Store (UWP)
-                        Cursor.lockState = CursorLockMode.None;
-                #endif
-            }
+            Cursor.lockState = inGame ? CursorLockMode.Locked : CursorLockMode.Confined;
+        }
+
+
+        /// <summary>
+        ///     Change default mouse Cursor mode into Crosshair mode. If crosshair or mouse cursor data not found it will load into
+        ///     default mouse cursor.
+        /// </summary>
+        [ContextMenu("Change Crosshair")]
+        public void ChangeIntoCrosshair()
+        {
+            // Set the cursor to the crosshair cursor texture
+            //_currentCursor.CursorTexture = _currentCursor.CrosshairCursorTexture;
+            SetCrosshair(__currentCrosshair);
+            // Lock the cursor
+            ChangeCursorLockState(true);
+            _cursorRectTransform.localPosition = Vector3.zero;
+        }
+
+        /// <summary>
+        ///     Change crosshair mode to mouse cursor mode. If crosshair or mouse cursor data not found it will load into default
+        ///     mouse cursor.
+        /// </summary>
+        [ContextMenu("Change Cursor")]
+        public void ChangeIntoCursor()
+        {
+            // Set the cursor to the crosshair cursor texture
+            //_currentCursor.CursorTexture = _currentCursor.CrosshairCursorTexture;
+            SetCursor(_currentCursor);
+            // Lock the cursor
+            ChangeCursorLockState(false);
         }
     }
+
 }

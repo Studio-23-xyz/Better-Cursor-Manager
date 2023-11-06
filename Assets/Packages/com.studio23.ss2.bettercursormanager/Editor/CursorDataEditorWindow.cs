@@ -6,39 +6,58 @@ namespace Studio23.SS2.BetterCursorManager.Editor
 {
     public class CursorDataEditorWindow : EditorWindow
     {
-        private Sprite cursorTexture;
-        private Vector2 hotspot = new Vector2(.3f, .8f);
-        private Vector2 pixelSize = new Vector2(32, 32);
+        private Sprite _cursorTexture;
+        private Vector2 _hotspot = new(.3f, .8f);
+        private Vector2 _pixelSize = new(32, 32);
 
-        [MenuItem("Studio-23/BetterCursor/Create CursorData", false, 1)]
+        private Texture _titleImage;
+
+        [MenuItem("Studio-23/BetterCursor/Create Cursor", false, 1)]
         public static void ShowWindow()
         {
-            GetWindow<CursorDataEditorWindow>("Create Cursor Data");
+            GetWindow<CursorDataEditorWindow>("Create Cursor");
         }
+
 
         private void OnGUI()
         {
+            if (_titleImage == null)
+                // Load the title image from the Resources folder
+                _titleImage = Resources.Load<Texture>("Images/Title");
+
+            // Display the title image at the top of the window
+            if (_titleImage != null)
+            {
+                var titleRect = EditorGUILayout.GetControlRect(false, _titleImage.height);
+                EditorGUI.DrawPreviewTexture(titleRect, _titleImage);
+            }
+
             GUILayout.Label("Cursor Data Creation", EditorStyles.boldLabel);
 
-            cursorTexture = (Sprite)EditorGUILayout.ObjectField("Cursor Texture", cursorTexture, typeof(Sprite), false);
-            hotspot = EditorGUILayout.Vector2Field("Hotspot", hotspot);
-            pixelSize = EditorGUILayout.Vector2Field("Pixel Size", pixelSize);
+            _cursorTexture =
+                (Sprite)EditorGUILayout.ObjectField("Cursor Texture", _cursorTexture, typeof(Sprite), false);
+            _hotspot = EditorGUILayout.Vector2Field("Hotspot", _hotspot);
+            _pixelSize = EditorGUILayout.Vector2Field("Pixel Size", _pixelSize);
 
-            if (GUILayout.Button("Create Cursor Data"))
-            {
-                CreateCursorDataAsset();
-            }
+            if (GUILayout.Button("Create Cursor Data")) CreateCursorDataAsset();
         }
 
         private void CreateCursorDataAsset()
         {
-            CursorData cursorData = CreateInstance<CursorData>();
-            cursorData.CursorTexture = cursorTexture;
-            cursorData.HotSpot = hotspot;
-            cursorData.PixelSize = pixelSize;
+            if (_cursorTexture == null)
+            {
+                // Show an error message in the editor GUI
+                EditorUtility.DisplayDialog("Error", "Cursor Texture and Crosshair Texture must be set.", "OK");
+                return;
+            }
 
-            string path = AssetDatabase.GenerateUniqueAssetPath(
-                $"Assets/Packages/com.studio23.ss2.bettercursormanager/Resources/{cursorTexture.name}_CursorData.asset");
+            var cursorData = CreateInstance<CursorData>();
+            cursorData.CursorTexture = _cursorTexture;
+            cursorData.HotSpot = _hotspot;
+            cursorData.PixelSize = _pixelSize;
+
+            var path = AssetDatabase.GenerateUniqueAssetPath(
+                $"Assets/Packages/com.studio23.ss2.bettercursormanager/Resources/{_cursorTexture.name}_CursorData.asset");
             AssetDatabase.CreateAsset(cursorData, path);
             AssetDatabase.SaveAssets();
 
