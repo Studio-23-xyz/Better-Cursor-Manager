@@ -1,0 +1,33 @@
+{
+    "name": "com.studio23.ss2.bettercursormanager",
+    "version": "1.0.9",
+    "displayName": "Better Cursor Manager",
+    "description": "Cursor Manager For Unity games",
+    "unity": "2021.3",
+    "unityRelease": "15f1",
+    "documentationUrl": "https://studio-23-xyz.github.io/Better-Cursor-Manager/manual/",
+    "changelogUrl": "https://studio-23-xyz.github.io/Better-Cursor-Manager/changelog/CHANGELOG.html",
+    "licensesUrl": "https://studio-23-xyz.github.io/Better-Cursor-Manager/license/LICENSE.html",
+    "scopedRegistries": [
+        {
+            "name": "Studio 23",
+            "url": "https://package.openupm.com",
+            "scopes": [
+                "com.studio23.ss2"
+            ]
+        }
+    ],
+    "dependencies": {
+        "com.unity.inputsystem": "1.4.4"
+    },
+    "keywords": [
+        "Utility",
+        "Cursor",
+        "Better"
+    ],
+    "author": {
+        "name": "Studio 23",
+        "email": "contact@studio-23.xyz",
+        "url": "https://studio-23.xyz"
+    }
+}

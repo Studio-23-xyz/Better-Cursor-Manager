@@ -1,0 +1,18 @@
+{
+    "name": "com.studio23.ss2.bettercursormanager.editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:18555d63bc12f2a4cad77e151beba553"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
