@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.7] - 2023-12-06
+
+
+### Improvements
+
++  Added Platform Define Symbols
+
+
 
 ## [v1.0.6] - 2023-11-06
 
