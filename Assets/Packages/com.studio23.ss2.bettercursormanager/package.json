@@ -1,6 +1,6 @@
 {
     "name": "com.studio23.ss2.bettercursormanager",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "displayName": "Better Cursor Manager",
     "description": "Cursor Manager For Unity games",
     "unity": "2021.3",
