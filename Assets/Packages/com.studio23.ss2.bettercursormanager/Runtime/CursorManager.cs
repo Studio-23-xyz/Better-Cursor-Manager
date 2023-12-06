@@ -30,6 +30,8 @@ namespace Studio23.SS2.BetterCursorManager.Core
 
         public void Initialize()
         {
+
+#if PLATFORM_STANDALONE
             // If no cursor data given, it will load into default cursor 
             if (_currentCursor == null || __currentCrosshair == null)
             {
@@ -40,11 +42,16 @@ namespace Studio23.SS2.BetterCursorManager.Core
             Cursor.visible = false;
             SetCursor(_currentCursor);
             ChangeCursorLockState(false);
+#endif
+
         }
 
         private void FixedUpdate()
         {
+#if PLATFORM_STANDALONE
             UpdateCursorPosition();
+#endif
+
         }
 
         private void UpdateCursorPosition()
@@ -107,7 +114,10 @@ namespace Studio23.SS2.BetterCursorManager.Core
         /// <param name="inGame"></param>
         public void ChangeCursorLockState(bool inGame)
         {
+#if PLATFORM_STANDALONE
             Cursor.lockState = inGame ? CursorLockMode.Locked : CursorLockMode.Confined;
+#endif
+
         }
 
 

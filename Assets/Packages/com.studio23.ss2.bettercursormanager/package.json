@@ -1,13 +1,13 @@
 {
     "name": "com.studio23.ss2.bettercursormanager",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "displayName": "Better Cursor Manager",
-    "description": "Streamline and enhance your game's inventory management with our Unity package. This powerful tool simplifies the creation and management of player inventories, making it easy to handle items, equipment, and resources, allowing you to focus on crafting the ultimate gaming experience.",
+    "description": "Cursor Manager For Unity games",
     "unity": "2021.3",
     "unityRelease": "15f1",
-    "documentationUrl": "https://openupm.com/packages/com.studio23.ss2.bettercursormanager/",
-    "changelogUrl": "https://openupm.com/packages/com.studio23.ss2.bettercursormanager/",
-    "licensesUrl": "https://opensource.org/license/mit/",
+    "documentationUrl": "https://studio-23-xyz.github.io/Better-Cursor-Manager/manual/",
+    "changelogUrl": "https://studio-23-xyz.github.io/Better-Cursor-Manager/changelog/CHANGELOG.html",
+    "licensesUrl": "https://studio-23-xyz.github.io/Better-Cursor-Manager/license/LICENSE.html",
     "scopedRegistries": [
         {
             "name": "Studio 23",
@@ -20,13 +20,6 @@
     "dependencies": {
         "com.unity.inputsystem": "1.4.4"
     },
-    "samples": [
-        {
-            "displayName": "Functional Example",
-            "description": "A small sample to demonstrate the abilities of the package.",
-            "path": "Samples~/Demo1"
-        }
-    ],
     "keywords": [
         "Utility",
         "Cursor",
