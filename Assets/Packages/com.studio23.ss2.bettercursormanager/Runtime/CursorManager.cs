@@ -56,6 +56,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
 
         private void UpdateCursorPosition()
         {
+#if PLATFORM_STANDALONE
             if (Cursor.lockState == CursorLockMode.Locked) return;
 
             // Get the mouse position in screen space.
@@ -71,6 +72,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
 
             // Set the UI Image's position to follow the mouse.
             _cursorRectTransform.localPosition = localMousePosition;
+#endif
         }
 
         /// <summary>
@@ -80,11 +82,13 @@ namespace Studio23.SS2.BetterCursorManager.Core
         /// <param name="cursorData"></param>
         public void SetCursor(CursorData cursorData)
         {
+#if PLATFORM_STANDALONE
             if (cursorData == null) return;
             _cursorRectTransform.GetComponent<Image>().sprite = cursorData.CursorTexture;
             _cursorRectTransform.sizeDelta = cursorData.PixelSize;
             _cursorRectTransform.pivot = cursorData.HotSpot;
             UpdateCursorPosition();
+#endif
         }
 
         /// <summary>
