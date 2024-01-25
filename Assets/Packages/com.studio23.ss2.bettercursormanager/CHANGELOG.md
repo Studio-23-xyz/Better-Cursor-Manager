@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.0.10] - 2024-25-01
+
+### Version update
+
++ Updated unity version
+
+### Bug Fixes
+
++  Fixed a bug where creating cursor data results failed
+
+
+
 ## [v1.0.7] - 2023-12-06
 
 

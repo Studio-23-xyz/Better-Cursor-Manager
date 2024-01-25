@@ -9,7 +9,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
     {
         public static CursorManager Instance;
         [SerializeField] private CursorData _currentCursor;
-        [SerializeField] private CrosshairCursorData __currentCrosshair;
+        [SerializeField] private CrosshairCursorData _currentCrosshair;
         [SerializeField] private RectTransform _cursorRectTransform;
         [SerializeField] private Canvas _canvas;
 
@@ -33,7 +33,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
 
 #if PLATFORM_STANDALONE
             // If no cursor data given, it will load into default cursor 
-            if (_currentCursor == null || __currentCrosshair == null)
+            if (_currentCursor == null || _currentCrosshair == null)
             {
                 _defaultCursor = Resources.Load<CursorData>("Default Cursor");
                 SetCursor(_defaultCursor);
@@ -134,7 +134,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
         {
             // Set the cursor to the crosshair cursor texture
             //_currentCursor.CursorTexture = _currentCursor.CrosshairCursorTexture;
-            SetCrosshair(__currentCrosshair);
+            SetCrosshair(_currentCrosshair);
             // Lock the cursor
             ChangeCursorLockState(true);
             _cursorRectTransform.localPosition = Vector3.zero;
