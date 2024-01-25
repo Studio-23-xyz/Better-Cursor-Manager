@@ -1,3 +1,5 @@
+using System.IO;
+using GluonGui.WorkspaceWindow.Views.WorkspaceExplorer.Explorer;
 using Studio23.SS2.BetterCursorManager.Data;
 using UnityEditor;
 using UnityEngine;
@@ -11,6 +13,8 @@ namespace Studio23.SS2.BetterCursorManager.Editor
         private Vector2 _pixelSize = new(32, 32);
 
         private Texture _titleImage;
+
+        private static readonly string _folderPath = "Assets/Resources/BetterCursor/";
 
         [MenuItem("Studio-23/BetterCursor/Create Cursor", false, 1)]
         public static void ShowWindow()
@@ -56,9 +60,11 @@ namespace Studio23.SS2.BetterCursorManager.Editor
             cursorData.HotSpot = _hotspot;
             cursorData.PixelSize = _pixelSize;
 
-            var path = AssetDatabase.GenerateUniqueAssetPath(
-                $"Assets/Packages/com.studio23.ss2.bettercursormanager/Resources/{_cursorTexture.name}_CursorData.asset");
-            AssetDatabase.CreateAsset(cursorData, path);
+
+            if (!Directory.Exists(_folderPath)) Directory.CreateDirectory(_folderPath);
+            var cursorDataPath = Path.Combine(_folderPath, $"{_cursorTexture.name}_CursorData.asset");
+
+            AssetDatabase.CreateAsset(cursorData, cursorDataPath);
             AssetDatabase.SaveAssets();
 
             EditorUtility.FocusProjectWindow();
