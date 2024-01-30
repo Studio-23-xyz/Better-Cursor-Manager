@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.0.11] - 2024-30-01
+
+
+### Bug Fixes
+
++  Fixed a bug where cursor always remains locked
+
+
+
 ## [v1.0.10] - 2024-25-01
 
 ### Version update
