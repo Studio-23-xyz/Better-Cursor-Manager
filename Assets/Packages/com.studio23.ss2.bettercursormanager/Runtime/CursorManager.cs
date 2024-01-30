@@ -21,10 +21,6 @@ namespace Studio23.SS2.BetterCursorManager.Core
                 Destroy(this);
             Instance = this;
             DontDestroyOnLoad(this);
-        }
-
-        private void Start()
-        {
             Initialize();
         }
 
@@ -43,7 +39,6 @@ namespace Studio23.SS2.BetterCursorManager.Core
             SetCursor(_currentCursor);
             ChangeCursorLockState(false);
 #endif
-
         }
 
         private void FixedUpdate()
