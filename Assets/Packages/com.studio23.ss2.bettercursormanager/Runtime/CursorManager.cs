@@ -17,11 +17,16 @@ namespace Studio23.SS2.BetterCursorManager.Core
 
         private void Awake()
         {
-            if (Instance != null)
-                Destroy(this);
-            Instance = this;
-            DontDestroyOnLoad(this);
-            Initialize();
+            if (Instance == null)
+            {
+                Instance = this;
+                Initialize();
+                DontDestroyOnLoad(this);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         public void Initialize()
