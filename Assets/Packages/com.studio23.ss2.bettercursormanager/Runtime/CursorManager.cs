@@ -46,7 +46,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
 #endif
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
 #if PLATFORM_STANDALONE
             UpdateCursorPosition();
