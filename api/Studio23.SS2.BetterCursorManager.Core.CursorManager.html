@@ -163,8 +163,8 @@ Class CursorManager  <a class="header-action link-secondary" title="View source"
 
   <a id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeCursorLockState_" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState*"></a>
 
-  <h3 id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeCursorLockState_System_Boolean_" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(System.Boolean)">
-  ChangeCursorLockState(bool)
+  <h3 id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeCursorLockState_System_Boolean_System_Boolean_" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(System.Boolean,System.Boolean)">
+  ChangeCursorLockState(bool, bool)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Assets/Packages/com.studio23.ss2.bettercursormanager/Runtime/CursorManager.cs/#L114"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -173,12 +173,14 @@ Class CursorManager  <a class="header-action link-secondary" title="View source"
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ChangeCursorLockState(bool inGame)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ChangeCursorLockState(bool isLocked, bool shouldToggleCursorSprite = true)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>inGame</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dt><code>isLocked</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>shouldToggleCursorSprite</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd></dd>
   </dl>
 
@@ -197,7 +199,7 @@ Class CursorManager  <a class="header-action link-secondary" title="View source"
 
   <h3 id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeIntoCrosshair" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCrosshair">
   ChangeIntoCrosshair()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Assets/Packages/com.studio23.ss2.bettercursormanager/Runtime/CursorManager.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Assets/Packages/com.studio23.ss2.bettercursormanager/Runtime/CursorManager.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Change default mouse Cursor mode into Crosshair mode. If crosshair or mouse cursor data not found it will load into
@@ -225,7 +227,7 @@ default mouse cursor.</p>
 
   <h3 id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeIntoCursor" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeIntoCursor">
   ChangeIntoCursor()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Assets/Packages/com.studio23.ss2.bettercursormanager/Runtime/CursorManager.cs/#L142"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Assets/Packages/com.studio23.ss2.bettercursormanager/Runtime/CursorManager.cs/#L143"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Change crosshair mode to mouse cursor mode. If crosshair or mouse cursor data not found it will load into default
@@ -341,10 +343,10 @@ overall data of the cursor</p>
 
 
 
-  <a id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursor_" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor*"></a>
+  <a id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursorSprite_" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite*"></a>
 
-  <h3 id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursor_System_Boolean_" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor(System.Boolean)">
-  ToggleCursor(bool)
+  <h3 id="Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursorSprite_System_Boolean_" data-uid="Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite(System.Boolean)">
+  ToggleCursorSprite(bool)
   <a class="header-action link-secondary" title="View source" href="https://github.com/Studio-23-xyz/Better-Cursor-Manager/blob/main/Assets/Packages/com.studio23.ss2.bettercursormanager/Runtime/CursorManager.cs/#L104"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -353,7 +355,7 @@ overall data of the cursor</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void ToggleCursor(bool state)</code></pre>
+    <pre><code class="lang-csharp hljs">public void ToggleCursorSprite(bool state)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

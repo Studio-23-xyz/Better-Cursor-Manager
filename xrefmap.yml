@@ -53,15 +53,15 @@ references:
   commentId: T:Studio23.SS2.BetterCursorManager.Core.CursorManager
   fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager
   nameWithType: CursorManager
-- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(System.Boolean)
-  name: ChangeCursorLockState(bool)
-  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeCursorLockState_System_Boolean_
-  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(System.Boolean)
-  name.vb: ChangeCursorLockState(Boolean)
-  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(bool)
-  fullName.vb: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(Boolean)
-  nameWithType: CursorManager.ChangeCursorLockState(bool)
-  nameWithType.vb: CursorManager.ChangeCursorLockState(Boolean)
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(System.Boolean,System.Boolean)
+  name: ChangeCursorLockState(bool, bool)
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeCursorLockState_System_Boolean_System_Boolean_
+  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(System.Boolean,System.Boolean)
+  name.vb: ChangeCursorLockState(Boolean, Boolean)
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(bool, bool)
+  fullName.vb: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState(Boolean, Boolean)
+  nameWithType: CursorManager.ChangeCursorLockState(bool, bool)
+  nameWithType.vb: CursorManager.ChangeCursorLockState(Boolean, Boolean)
 - uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ChangeCursorLockState*
   name: ChangeCursorLockState
   href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ChangeCursorLockState_
@@ -140,22 +140,22 @@ references:
   isSpec: "True"
   fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.SetCursor
   nameWithType: CursorManager.SetCursor
-- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor(System.Boolean)
-  name: ToggleCursor(bool)
-  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursor_System_Boolean_
-  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor(System.Boolean)
-  name.vb: ToggleCursor(Boolean)
-  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor(bool)
-  fullName.vb: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor(Boolean)
-  nameWithType: CursorManager.ToggleCursor(bool)
-  nameWithType.vb: CursorManager.ToggleCursor(Boolean)
-- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor*
-  name: ToggleCursor
-  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursor_
-  commentId: Overload:Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite(System.Boolean)
+  name: ToggleCursorSprite(bool)
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursorSprite_System_Boolean_
+  commentId: M:Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite(System.Boolean)
+  name.vb: ToggleCursorSprite(Boolean)
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite(bool)
+  fullName.vb: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite(Boolean)
+  nameWithType: CursorManager.ToggleCursorSprite(bool)
+  nameWithType.vb: CursorManager.ToggleCursorSprite(Boolean)
+- uid: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite*
+  name: ToggleCursorSprite
+  href: api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html#Studio23_SS2_BetterCursorManager_Core_CursorManager_ToggleCursorSprite_
+  commentId: Overload:Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite
   isSpec: "True"
-  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursor
-  nameWithType: CursorManager.ToggleCursor
+  fullName: Studio23.SS2.BetterCursorManager.Core.CursorManager.ToggleCursorSprite
+  nameWithType: CursorManager.ToggleCursorSprite
 - uid: Studio23.SS2.BetterCursorManager.Data
   name: Studio23.SS2.BetterCursorManager.Data
   href: api/Studio23.SS2.BetterCursorManager.Data.html
