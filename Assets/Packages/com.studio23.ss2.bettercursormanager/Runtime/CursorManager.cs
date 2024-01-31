@@ -101,7 +101,7 @@ namespace Studio23.SS2.BetterCursorManager.Core
         /// Enable or disable Cursor image 
         /// </summary>
         /// <param name="state"></param>
-        public void ToggleCursor(bool state)
+        public void ToggleCursorSprite(bool state)
         {
             _cursorRectTransform.gameObject.SetActive(state);
         }
@@ -110,13 +110,14 @@ namespace Studio23.SS2.BetterCursorManager.Core
         /// <summary>
         /// This method can be used to change the cursor lock state. 
         /// </summary>
-        /// <param name="inGame"></param>
-        public void ChangeCursorLockState(bool inGame)
+        /// <param name="isLocked"></param>
+        public void ChangeCursorLockState(bool isLocked, bool shouldToggleCursorSprite = true)
         {
 #if PLATFORM_STANDALONE
-            Cursor.lockState = inGame ? CursorLockMode.Locked : CursorLockMode.Confined;
+            Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.Confined;
+           if (shouldToggleCursorSprite)
+               ToggleCursorSprite(!isLocked);
 #endif
-
         }
 
 
