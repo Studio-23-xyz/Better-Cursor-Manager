@@ -1,4 +1,7 @@
-# Custom Cursor System for Unity
+<h1 align="center">Better Cursor</h1><p align="center">
+<a href="https://openupm.com/packages/com.studio23.ss2.bettercursormanager/"><img src="https://img.shields.io/npm/v/com.studio23.ss2.bettercursormanager?label=openupm&amp;registry_uri=https://package.openupm.com" /></a>
+</p>
+
 
 This custom cursor system for Unity allows you to easily implement and manage custom cursors with configurable textures, hotspots, and pixel sizes. This README provides instructions on how to use this library in your Unity projects.
 
@@ -21,17 +24,17 @@ https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm
 ```
 ## Usage
 
-### Creating CursorData
+### Creating CursorDatapublic void SetCursorVisibilityState(bool state)
 
 1. In the Unity Editor menu window, Studio-23 -> Better Cursor -> Create CursorData.
 
 2. A editor window will popup to create new cursor data. Place any sprite in "Cursor Texture" field.
+3. In the `Texture Update Delay` field set how fast you want the textures to iterate.Lower is faster. **Default : 0.1f**
+4. In the `Hotspot` field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]
 
-3. In the "Hotspot" field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]
+5. In the `Pixel Size` field, put the preferable cursor's width and height [default value should be 32 , 32]
 
-4. In the "Pixel Size" field, put the preferable cursor's width and height [default value should be 32 , 32]
-
-3. A "CursorCanvas" gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.
+6. A **CursorCanvas** gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.
 
 ### Installing CursorCanvas
 
@@ -50,10 +53,15 @@ https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm
 // Example code to change the cursor when a button is clicked:
 public void OnButtonClick()
 {
-    CursorManager.Instance.ToggleCursor(true);
+    CursorManager.Instance.SetCursorVisibilityState(true)
 }
 
 public void ChangeCursorLockState()
 {
      CursorManager.Instance.ChangeCursorLockState(true);
 }
+
+> For more details check the scripting api docuementaion.
+
+
+
