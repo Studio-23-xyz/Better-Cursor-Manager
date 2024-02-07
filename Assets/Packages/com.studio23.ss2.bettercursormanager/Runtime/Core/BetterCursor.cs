@@ -88,6 +88,18 @@ namespace Studio23.SS2.BetterCursor.Core
         }
 
 
+        /// <summary>
+        /// This method can be used to change the overall cursor state
+        /// </summary>
+        /// <param name="state"></param>
+
+        public void SetCursorState(bool state)
+        {
+            SetCursorVisibilityState(state);
+            ChangeCursorLockState(!state);
+        }
+
+
 
         /// <summary>
         /// Enable or disable Cursor image 
