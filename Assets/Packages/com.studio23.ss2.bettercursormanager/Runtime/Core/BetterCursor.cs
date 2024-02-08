@@ -1,3 +1,4 @@
+using System;
 using Studio23.SS2.BetterCursor.Data;
 using UnityEngine;
 
@@ -5,7 +6,9 @@ namespace Studio23.SS2.BetterCursor.Core
 {
     public class BetterCursor : MonoBehaviour
     {
-        public static BetterCursor Instance;
+        private static readonly Lazy<BetterCursor> _instance = new(() => FindObjectOfType<BetterCursor>(), true);
+        public static BetterCursor Instance => _instance.Value;
+
 
         [SerializeField] private Canvas _canvas;
         [SerializeField] private Camera _camera;
@@ -20,30 +23,21 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void Awake()
         {
-            if(Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
+            if (_instance.IsValueCreated && _instance.Value != this)
                 Destroy(gameObject);
-            }
+            else
+                DontDestroyOnLoad(gameObject);
         }
 
 
         private void Start()
         {
-
             Cursor.visible = false;
 
+            _camera = _camera ?? Camera.main;
             if (_camera == null)
-            {
-                _camera=Camera.main;
-                if (_camera == null)
-                {
-                    Debug.LogError("No Camera assigned on Better Cursor.It must be assigned for it to work.Or Tag a camera as MainCamera");
-                }
-            }
+                Debug.LogError(
+                    "No Camera assigned on Better Cursor.It must be assigned for it to work.Or Tag a camera as MainCamera");
 
             _canvas = GetComponent<Canvas>();
             _eventController = GetComponentInChildren<CursorEventController>();
@@ -57,15 +51,11 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void Initialize()
         {
-
-            if (CurrentCursor == null)
-            {
-                CurrentCursor = Resources.Load<CursorData>("Default Cursor");
-            }
+            if (CurrentCursor == null) CurrentCursor = Resources.Load<CursorData>("Default Cursor");
 
             _locoMotionController.Initialize(_canvas, CurrentCursor);
             _animationController.Initialize(CurrentCursor);
-            _eventController.Initialize(_onHoverMask,_camera);
+            _eventController.Initialize(_onHoverMask, _camera);
         }
 
 
@@ -76,23 +66,21 @@ namespace Studio23.SS2.BetterCursor.Core
         /// <param name="cursorData"></param>
         public void ChangeCursor(CursorData cursorData)
         {
-
             if (cursorData == null)
             {
                 Debug.LogError("You attempted to initialize with null cursor data", this);
                 return;
             }
+
             CurrentCursor = cursorData;
             Initialize();
-
         }
 
 
         /// <summary>
-        /// This method can be used to change the overall cursor state
+        ///     This method can be used to change the overall cursor state
         /// </summary>
         /// <param name="state"></param>
-
         public void SetCursorState(bool state)
         {
             SetCursorVisibilityState(state);
@@ -100,9 +88,8 @@ namespace Studio23.SS2.BetterCursor.Core
         }
 
 
-
         /// <summary>
-        /// Enable or disable Cursor image 
+        ///     Enable or disable Cursor image
         /// </summary>
         /// <param name="state"></param>
         public void SetCursorVisibilityState(bool state)
@@ -112,15 +99,12 @@ namespace Studio23.SS2.BetterCursor.Core
 
 
         /// <summary>
-        /// This method can be used to change the cursor lock state. 
+        ///     This method can be used to change the cursor lock state.
         /// </summary>
         /// <param name="isLocked"></param>
         public void ChangeCursorLockState(bool isLocked)
         {
             Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.Confined;
         }
-
-
-
     }
 }
