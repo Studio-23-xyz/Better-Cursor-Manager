@@ -9,9 +9,9 @@ This custom cursor system for Unity allows you to easily implement and manage cu
 
 1. [Installation](#installation)
 2. [Usage](#usage)
-   - [Creating Cursor Data](#Creating CursorData)
-   - [Creating a CursorCanvas prefab](#Installing CursorCanvas)
-   - [Setting Up CursorManager Script](#Using CursorManager script)
+   - [Creating Cursor Data](#creating-cursorData)
+   - [Creating a CursorCanvas prefab](#installing-cursorCanvas)
+   - [Setting Up CursorManager Script](#using-cursorManager-script)
 3. [Example](#example)
 4. [License](#license)
 
@@ -24,7 +24,7 @@ https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm
 ```
 ## Usage
 
-### Creating CursorDatapublic void SetCursorVisibilityState(bool state)
+### Creating CursorData
 
 1. In the Unity Editor menu window, Studio-23 -> Better Cursor -> Create CursorData.
 
