@@ -6,9 +6,7 @@ namespace Studio23.SS2.BetterCursor.Core
 {
     public class BetterCursor : MonoBehaviour
     {
-        private static readonly Lazy<BetterCursor> _instance = new(() => FindObjectOfType<BetterCursor>(), true);
-        public static BetterCursor Instance => _instance.Value;
-
+        public static BetterCursor Instance;
 
         [SerializeField] private Canvas _canvas;
         [SerializeField] private Camera _camera;
@@ -23,12 +21,11 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void Awake()
         {
-            if (_instance.IsValueCreated && _instance.Value != this)
-                Destroy(gameObject);
+            if (Instance == null)
+                Instance = this;
             else
-                DontDestroyOnLoad(gameObject);
+                Destroy(gameObject);
         }
-
 
         private void Start()
         {
