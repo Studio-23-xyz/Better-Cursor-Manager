@@ -8,11 +8,11 @@ namespace Studio23.SS2.BetterCursor.Core
 {
     public class CursorEventController : MonoBehaviour
     {
-        private IHoverable _currentHoveringObject;
         private IHoverable _lastHoveredObject;
 
         private LayerMask _layerMask;
         private Camera _camera;
+        private List<RaycastResult> _raycastResults = new List<RaycastResult>();
 
         internal void Initialize(LayerMask layerMask, Camera mainCamera)
         {
@@ -27,22 +27,22 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void UpdateCollision()
         {
+            IHoverable currentHoveredObject = null;
+
             if (BetterCursor.Instance.UiOnHoverEnabled)
-                _currentHoveringObject = GetHoveredUIObject()?.GetComponent<IHoverable>();
+                currentHoveredObject = GetHoveredUIObject()?.GetComponent<IHoverable>();
             else
-                _currentHoveringObject = GetHoveredObject()?.GetComponent<IHoverable>();
+                currentHoveredObject = GetHoveredObject()?.GetComponent<IHoverable>();
 
+            if (currentHoveredObject == _lastHoveredObject) return;
 
-            if (_currentHoveringObject == _lastHoveredObject) return;
-
-            if (_lastHoveredObject != _currentHoveringObject)
+            if (_lastHoveredObject != currentHoveredObject)
             {
                 _lastHoveredObject?.OnHoverExit();
-                _lastHoveredObject = _currentHoveringObject;
+                _lastHoveredObject = currentHoveredObject;
                 _lastHoveredObject?.OnHoverEnter();
             }
         }
-
 
         private GameObject GetHoveredObject()
         {
@@ -59,12 +59,13 @@ namespace Studio23.SS2.BetterCursor.Core
             var pointerEventData = new PointerEventData(EventSystem.current);
             pointerEventData.position = Mouse.current.position.ReadValue();
 
-            var raycastResults = new List<RaycastResult>();
-            EventSystem.current.RaycastAll(pointerEventData, raycastResults);
+            _raycastResults.Clear(); // Clear the list before using it again
+            EventSystem.current.RaycastAll(pointerEventData, _raycastResults);
 
-            if (raycastResults.Count > 0) return raycastResults[0].gameObject;
+            if (_raycastResults.Count > 0) return _raycastResults[0].gameObject;
 
             return null;
         }
+
     }
 }

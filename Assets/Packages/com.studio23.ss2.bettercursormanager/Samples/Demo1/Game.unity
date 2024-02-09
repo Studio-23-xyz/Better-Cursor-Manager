@@ -212,6 +212,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CursorData: {fileID: 0}
+--- !u!1 &375982900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 375982902}
+  - component: {fileID: 375982901}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &375982901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375982900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!4 &375982902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375982900}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 422, y: 237.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &809512755
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,17 +861,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_PointAction: {fileID: 6242089149229352091, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_MoveAction: {fileID: 2975561157364440648, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_SubmitAction: {fileID: -3407417339164923088, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_CancelAction: {fileID: 8617462568764052482, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_LeftClickAction: {fileID: -4947078192342540062, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_MiddleClickAction: {fileID: 5766011427602147435, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_RightClickAction: {fileID: 2830257278650712946, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_ScrollWheelAction: {fileID: -7019317387257525636, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_TrackedDevicePositionAction: {fileID: -5106609042480207207, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 8672933677196612654, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -935,6 +997,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 375982901}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: TestAction.m_Id
+      value: a0707d6d-afaf-45a8-b5ee-109446b461d7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: CursorActionAsset
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 3294634e46dead54d96e7cd87a7f5deb, type: 3}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: TestAction.m_Name
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: CursorActionAsset.m_Id
+      value: 44904008-6493-4d82-9e3c-b2b3aaa1ffb7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: CursorActionAsset.m_Name
+      value: Cursor Action Asset
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: TestAction.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: TestAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 379b554b-c86e-4fdd-b972-84945dda0b58
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: TestAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: <Keyboard>/k
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089968787840641007, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: TestAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Test
+      objectReference: {fileID: 0}
+    - target: {fileID: 7336245767162126879, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
+      propertyPath: _camera
+      value: 
+      objectReference: {fileID: 963194227}
     - target: {fileID: 7336245767162126879, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
       propertyPath: CurrentCursor
       value: 
@@ -954,4 +1060,5 @@ SceneRoots:
   - {fileID: 809512759}
   - {fileID: 1849103236}
   - {fileID: 1917518027}
+  - {fileID: 375982902}
   - {fileID: 1075407601}

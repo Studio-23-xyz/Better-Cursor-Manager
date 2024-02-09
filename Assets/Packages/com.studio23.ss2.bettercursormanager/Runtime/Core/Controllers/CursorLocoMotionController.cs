@@ -8,6 +8,7 @@ namespace Studio23.SS2.BetterCursor.Core
     {
         [SerializeField] private RectTransform _cursorTransoform;
         [SerializeField] private Canvas _canvas;
+        public InputActionAsset CursorActionAsset;
 
         private void Awake()
         {
@@ -26,23 +27,28 @@ namespace Studio23.SS2.BetterCursor.Core
             UpdateCursorPosition();
         }
 
+
         private void UpdateCursorPosition()
         {
-            if (_canvas == null) return;
-            if (Cursor.lockState == CursorLockMode.Locked) return;
+            if (CursorActionAsset != null)
+            {
+                if (_canvas == null) return;
+                if (Cursor.lockState == CursorLockMode.Locked) return;
+                var cursorPosition = CursorActionAsset["CursorPosition"].ReadValue<Vector2>();
 
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    _canvas.transform as RectTransform,
+                    cursorPosition,
+                    _canvas.worldCamera,
+                    out var localMousePosition
+                );
 
-            var mousePosition = Mouse.current.position.ReadValue();
-
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                _canvas.transform as RectTransform,
-                mousePosition,
-                _canvas.worldCamera,
-                out var localMousePosition
-            );
-
-
-            _cursorTransoform.localPosition = localMousePosition;
+                _cursorTransoform.localPosition = localMousePosition;
+            }
+            else
+            {
+                Debug.LogError("Cursoractionasset not assigned");
+            }
         }
     }
 }

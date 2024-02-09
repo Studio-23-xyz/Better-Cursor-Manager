@@ -13,7 +13,6 @@ namespace Studio23.SS2.BetterCursor.Core
         public CursorData CurrentCursor;
 
         public bool UiOnHoverEnabled;
-        [SerializeField] private LayerMask _onHoverMask;
 
         private CursorAnimationController _animationController;
         private CursorLocoMotionController _locoMotionController;
@@ -52,7 +51,7 @@ namespace Studio23.SS2.BetterCursor.Core
 
             _locoMotionController.Initialize(_canvas, CurrentCursor);
             _animationController.Initialize(CurrentCursor);
-            _eventController.Initialize(_onHoverMask, _camera);
+            _eventController.Initialize(CurrentCursor.HoverMask, _camera);
         }
 
 
@@ -75,13 +74,13 @@ namespace Studio23.SS2.BetterCursor.Core
 
 
         /// <summary>
-        ///     This method can be used to change the overall cursor state
+        ///  Sets cursor visibility and lockstate based on passed parameter
         /// </summary>
-        /// <param name="state"></param>
-        public void SetCursorState(bool state)
+        /// <param name="isLocked"></param>
+        public void SetCursorState(bool isLocked)
         {
-            SetCursorVisibilityState(state);
-            ChangeCursorLockState(!state);
+            SetCursorVisibilityState(isLocked);
+            ChangeCursorLockState(!isLocked);
         }
 
 
