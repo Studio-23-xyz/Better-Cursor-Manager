@@ -7,12 +7,12 @@
             "actions": [
                 {
                     "name": "CursorPosition",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "b32709be-0be3-468d-97c1-e6c3e7899fa3",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Stick",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Move",
@@ -100,17 +100,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c3d0da2c-221f-478e-8140-5150d65a3e07",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CursorPosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "6438b6f5-f4ef-49b5-9de8-e8156f07d8a9",
                     "path": "<DualShockGamepad>/rightStick",
                     "interactions": "",
@@ -138,6 +127,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
+                    "action": "CursorPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "721191e1-a592-48fd-b4a1-07faf09ce939",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "NormalizeVector2",
+                    "groups": "Keyboard&Mouse",
                     "action": "CursorPosition",
                     "isComposite": false,
                     "isPartOfComposite": false

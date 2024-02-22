@@ -117,11 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _canvas: {fileID: 0}
   _camera: {fileID: 0}
-  _currentCursor: {fileID: 11400000, guid: 10a1552d8eaa24148bd00b323462c54b, type: 2}
-  UIOnHoverEnabled: 0
-  _onHoverMask:
-    serializedVersion: 2
-    m_Bits: 64
+  CurrentCursor: {fileID: 0}
+  UiOnHoverEnabled: 0
 --- !u!1 &111351718192570480
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cursorTransoform: {fileID: 0}
   _canvas: {fileID: 0}
+  CursorActionAsset: {fileID: 0}
 --- !u!114 &6929159020671899796
 MonoBehaviour:
   m_ObjectHideFlags: 0
