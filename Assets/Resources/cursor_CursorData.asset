@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc684491d89115a48a77b82b011e8683, type: 3}
   m_Name: cursor_CursorData
   m_EditorClassIdentifier: 
+  CursorName: 
   CursorTextures:
   - {fileID: 21300000, guid: bbd788ecc0ff7bc4697eee9d45565a72, type: 3}
   - {fileID: 21300000, guid: 990bfce6624816041addb83ca48f9357, type: 3}
@@ -19,4 +20,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: eeb7cd290ade04744b32a460035b91ef, type: 3}
   HotSpot: {x: 0.3, y: 0.8}
   PixelSize: {x: 64, y: 64}
+  HoverMask:
+    serializedVersion: 2
+    m_Bits: 64
   TextureUpdateDelay: 0.1

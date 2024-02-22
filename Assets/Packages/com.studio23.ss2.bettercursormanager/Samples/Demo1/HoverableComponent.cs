@@ -5,10 +5,9 @@ using UnityEngine;
 
 public class HoverableComponent : MonoBehaviour,IHoverable
 {
-    
-     public CursorData CursorData;
+    public CursorData CursorData;
 
-     private CursorData _tempData;
+    private CursorData _tempData;
 
 
     public void OnHoverEnter()

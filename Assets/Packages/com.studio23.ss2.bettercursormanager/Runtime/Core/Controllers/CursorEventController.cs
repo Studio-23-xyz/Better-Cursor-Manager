@@ -47,7 +47,7 @@ namespace Studio23.SS2.BetterCursor.Core
         private GameObject GetHoveredObject()
         {
             RaycastHit hit;
-            var ray = _camera.ScreenPointToRay(Mouse.current.position.ReadValue());
+            var ray = _camera.ScreenPointToRay(GetComponent<CursorLocoMotionController>().GetCursorImagePosition());
 
             if (Physics.Raycast(ray, out hit, int.MaxValue, _layerMask)) return hit.collider.gameObject;
 

@@ -9,7 +9,7 @@
                     "name": "CursorPosition",
                     "type": "Value",
                     "id": "b32709be-0be3-468d-97c1-e6c3e7899fa3",
-                    "expectedControlType": "Stick",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -133,10 +133,10 @@
                 },
                 {
                     "name": "",
-                    "id": "721191e1-a592-48fd-b4a1-07faf09ce939",
-                    "path": "<Mouse>/delta",
+                    "id": "1a94a37d-df26-407e-912e-ed6e2a66def2",
+                    "path": "<Mouse>/position",
                     "interactions": "",
-                    "processors": "NormalizeVector2",
+                    "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "CursorPosition",
                     "isComposite": false,

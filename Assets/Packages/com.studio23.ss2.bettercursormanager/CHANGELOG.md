@@ -1,5 +1,14 @@
 # Changelog
 
+## [v1.1.1] - 2024-2-22
+
+## Updated
++ Cursor supports multiple sprites
++ Supports Gamepad cursor
++ Improved Cursor Bound Area
+
+
+
 ## [v1.1.0] - 2024-07-02
 
 ## Updated

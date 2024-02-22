@@ -7,88 +7,102 @@ namespace Studio23.SS2.BetterCursor.Core
 {
     public class CursorLocoMotionController : MonoBehaviour
     {
-        [SerializeField] private RectTransform _cursorTransoform;
+        [SerializeField] private RectTransform _cursorTransform;
         [SerializeField] private Canvas _canvas;
         public InputActionAsset CursorActionAsset;
-        private Vector2 screenBounds;
 
-        private Vector2 minScreenBounds;
-        private Vector2 maxScreenBounds;
-        private bool isDragging = false;
+        private Vector2 _minScreenBounds;
+        private Vector2 _maxScreenBounds;
+
+        private InputDevice _lastUsedDevice;
 
 
         private void Awake()
         {
-            _cursorTransoform = GetComponent<RectTransform>();
+            _cursorTransform = GetComponent<RectTransform>();
         }
 
         internal void Initialize(Canvas canvas, CursorData cursorData)
         {
             _canvas = canvas;
-            _cursorTransoform.sizeDelta = cursorData.PixelSize;
-            _cursorTransoform.pivot = cursorData.HotSpot;
+            _cursorTransform.sizeDelta = cursorData.PixelSize;
+            _cursorTransform.pivot = cursorData.HotSpot;
         }
 
-        void Start()
+        private void Start()
         {
-            Canvas canvas = _cursorTransoform.GetComponentInParent<Canvas>();
-            float screenWidth = Screen.width;
-            float screenHeight = Screen.height;
-            Vector2 screenSizeInCanvas = new Vector2(screenWidth, screenHeight) / canvas.scaleFactor;
-            Vector2 uiElementSize = _cursorTransoform.sizeDelta / 2.0f;
-            minScreenBounds = new Vector2(uiElementSize.x / 2, uiElementSize.y / 2);
-            maxScreenBounds = screenSizeInCanvas;
+            SetupBounds();
+            SetupLastUsedDevice();
         }
 
         private void Update()
         {
-            //UpdateControllerInput();
-            //HandleMouseInput();
+            UpdateCursorPosition();
+        }
+
+
+        public Vector2 GetCursorImagePosition()
+        {
+            return _cursorTransform.anchoredPosition;
+        }
+
+        private void UpdateCursorPosition()
+        {
             var cursorPosition = CursorActionAsset["CursorPosition"].ReadValue<Vector2>();
-            Debug.Log($"Input data {cursorPosition}");
+            if (IsController())
+                HandleControllerInput(cursorPosition);
+            else
+                HandleMouseInput(cursorPosition);
         }
 
-
-        private void UpdateControllerInput()
+        private void HandleControllerInput(Vector2 position)
         {
-            Vector2 stickInput = Gamepad.current?.leftStick.ReadValue() ?? Vector2.zero;
-            Vector3 move = new Vector3(stickInput.x, stickInput.y, 0) * 1000f * Time.deltaTime;
-
-            Vector2 nextPosition = _cursorTransoform.anchoredPosition + new Vector2(move.x, move.y);
-            nextPosition.x = Mathf.Clamp(nextPosition.x, minScreenBounds.x, maxScreenBounds.x);
-            nextPosition.y = Mathf.Clamp(nextPosition.y, minScreenBounds.y, maxScreenBounds.y);
-            _cursorTransoform.anchoredPosition = nextPosition;
-            Debug.Log("");
+            var move = new Vector3(position.x, position.y, 0) * 1000f * Time.deltaTime;
+            var nextPosition = _cursorTransform.anchoredPosition + new Vector2(move.x, move.y);
+            nextPosition.x = Mathf.Clamp(nextPosition.x, _minScreenBounds.x, _maxScreenBounds.x);
+            nextPosition.y = Mathf.Clamp(nextPosition.y, _minScreenBounds.y, _maxScreenBounds.y);
+            _cursorTransform.anchoredPosition = nextPosition;
         }
 
-        void HandleMouseInput()
+        private void HandleMouseInput(Vector2 position)
         {
-            if (Mouse.current.leftButton.wasPressedThisFrame)
-            {
-                isDragging = true;
-            }
-            if (Mouse.current.leftButton.wasReleasedThisFrame)
-            {
-                isDragging = false;
-            }
-            if (isDragging)
-            {
-                var cursorPosition = CursorActionAsset["CursorPosition"].ReadValue<Vector2>();
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                _canvas.transform as RectTransform,
+                position,
+                _canvas.worldCamera,
+                out var localMousePosition
+            );
 
-
-
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                    _canvas.transform as RectTransform,
-                    cursorPosition,
-                    _canvas.worldCamera,
-                    out var localMousePosition
-                );
-
-                _cursorTransoform.localPosition = localMousePosition;
-            }
-
-            Debug.Log("Is Dragging :" + isDragging);
+            _cursorTransform.localPosition = localMousePosition;
         }
 
+        private void SetupBounds()
+        {
+            var canvas = _cursorTransform.GetComponentInParent<Canvas>();
+            float screenWidth = Screen.width;
+            float screenHeight = Screen.height;
+            var screenSizeInCanvas = new Vector2(screenWidth, screenHeight) / canvas.scaleFactor;
+            var uiElementSize = _cursorTransform.sizeDelta / 2.0f;
+            _minScreenBounds = new Vector2(uiElementSize.x / 2, uiElementSize.y / 2);
+            _maxScreenBounds = screenSizeInCanvas;
+        }
+
+        private void SetupLastUsedDevice()
+        {
+            InputSystem.onActionChange += (obj, change) =>
+            {
+                if (change == InputActionChange.ActionPerformed)
+                {
+                    var inputAction = (InputAction)obj;
+                    var lastControl = inputAction.activeControl;
+                    _lastUsedDevice = lastControl.device;
+                }
+            };
+        }
+
+        private bool IsController()
+        {
+            return !(_lastUsedDevice is Keyboard || _lastUsedDevice is Mouse);
+        }
     }
 }
