@@ -12,12 +12,18 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private LayerMask _layerMask;
         private Camera _camera;
-        private List<RaycastResult> _raycastResults = new List<RaycastResult>();
+        private readonly List<RaycastResult> _raycastResults = new();
+        private CursorLocoMotionController _cursorLocoMotionController;
 
         internal void Initialize(LayerMask layerMask, Camera mainCamera)
         {
             _layerMask = layerMask;
             _camera = mainCamera;
+        }
+
+        private void Start()
+        {
+            _cursorLocoMotionController = GetComponent<CursorLocoMotionController>();
         }
 
         private void Update()
@@ -56,8 +62,11 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private GameObject GetHoveredUIObject()
         {
-            var pointerEventData = new PointerEventData(EventSystem.current);
-            pointerEventData.position = Mouse.current.position.ReadValue();
+            var pointerEventData = new PointerEventData(EventSystem.current)
+            {
+                position =
+                    _cursorLocoMotionController.CursorActionAsset["CursorPosition"].ReadValue<Vector2>()
+            };
 
             _raycastResults.Clear(); // Clear the list before using it again
             EventSystem.current.RaycastAll(pointerEventData, _raycastResults);
@@ -66,6 +75,5 @@ namespace Studio23.SS2.BetterCursor.Core
 
             return null;
         }
-
     }
 }

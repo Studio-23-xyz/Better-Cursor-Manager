@@ -9,6 +9,7 @@ namespace Studio23.SS2.BetterCursor.Core
     {
         [SerializeField] private RectTransform _cursorTransform;
         [SerializeField] private Canvas _canvas;
+        [SerializeField] private float _cursorSpeed = 1000f;
         public InputActionAsset CursorActionAsset;
 
         private Vector2 _minScreenBounds;
@@ -57,7 +58,7 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void HandleControllerInput(Vector2 position)
         {
-            var move = new Vector3(position.x, position.y, 0) * 1000f * Time.deltaTime;
+            var move = new Vector3(position.x, position.y, 0) * _cursorSpeed * Time.deltaTime;
             var nextPosition = _cursorTransform.anchoredPosition + new Vector2(move.x, move.y);
             nextPosition.x = Mathf.Clamp(nextPosition.x, _minScreenBounds.x, _maxScreenBounds.x);
             nextPosition.y = Mathf.Clamp(nextPosition.y, _minScreenBounds.y, _maxScreenBounds.y);
