@@ -1,5 +1,28 @@
 # Changelog
 
+## [v1.1.1] - 2024-2-22
+
+## Updated
++ Cursor supports multiple sprites
++ Supports Gamepad cursor
++ Improved Cursor Bound Area
+
+
+
+## [v1.1.0] - 2024-07-02
+
+## Updated
++ Refactored how Better Cursor Works
++ Cursor manager Renamed as BetterCursor
++ Improved Editor Setup Support
+
+
+## Added
++ Animation Controller Added to manage Animation
++ Locomotion Controller Added to manage Locomotion
++ Event Controller Added to manage Events
++ IHoverable Interface added to get Hovered object events in 3d Space
+
 ## [v1.0.11] - 2024-30-01
 
 

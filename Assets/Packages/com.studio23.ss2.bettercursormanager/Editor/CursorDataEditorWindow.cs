@@ -1,18 +1,19 @@
+using System.Collections.Generic;
 using System.IO;
-using GluonGui.WorkspaceWindow.Views.WorkspaceExplorer.Explorer;
-using Studio23.SS2.BetterCursorManager.Data;
+using Studio23.SS2.BetterCursor.Data;
 using UnityEditor;
 using UnityEngine;
 
-namespace Studio23.SS2.BetterCursorManager.Editor
+namespace Studio23.SS2.BetterCursor.Editor
 {
     public class CursorDataEditorWindow : EditorWindow
     {
-        private Sprite _cursorTexture;
+        private string _cursorName;
+        private readonly List<Sprite> _cursorTextures = new(1);
         private Vector2 _hotspot = new(.3f, .8f);
         private Vector2 _pixelSize = new(32, 32);
 
-        private Texture _titleImage;
+        private float _cursorTextureUpdateDelay = 0.1f;
 
         private static readonly string _folderPath = "Assets/Resources/BetterCursor/";
 
@@ -25,44 +26,54 @@ namespace Studio23.SS2.BetterCursorManager.Editor
 
         private void OnGUI()
         {
-            if (_titleImage == null)
-                // Load the title image from the Resources folder
-                _titleImage = Resources.Load<Texture>("Images/Title");
-
-            // Display the title image at the top of the window
-            if (_titleImage != null)
-            {
-                var titleRect = EditorGUILayout.GetControlRect(false, _titleImage.height);
-                EditorGUI.DrawPreviewTexture(titleRect, _titleImage);
-            }
-
             GUILayout.Label("Cursor Data Creation", EditorStyles.boldLabel);
-
-            _cursorTexture =
-                (Sprite)EditorGUILayout.ObjectField("Cursor Texture", _cursorTexture, typeof(Sprite), false);
+            _cursorName = EditorGUILayout.TextField("Name", _cursorName);
+            _cursorTextureUpdateDelay = EditorGUILayout.FloatField("Texture Update Delay", _cursorTextureUpdateDelay);
             _hotspot = EditorGUILayout.Vector2Field("Hotspot", _hotspot);
             _pixelSize = EditorGUILayout.Vector2Field("Pixel Size", _pixelSize);
+
+            EditorGUILayout.Space();
+            GUILayout.Label("Cursor Textures", EditorStyles.boldLabel);
+            // Display existing sprite fields
+            for (var i = 0; i < _cursorTextures.Count; i++)
+            {
+                EditorGUILayout.BeginHorizontal();
+                _cursorTextures[i] =
+                    (Sprite)EditorGUILayout.ObjectField($"Texture {i + 1}", _cursorTextures[i], typeof(Sprite), true);
+                if (GUILayout.Button("X", GUILayout.Width(20)))
+                {
+                    _cursorTextures.RemoveAt(i);
+                    break;
+                }
+
+                EditorGUILayout.EndHorizontal();
+            }
+
+            // Add a default sprite field if there are no sprites
+            if (_cursorTextures.Count == 0) _cursorTextures.Add(null);
+
+            // Button to add more sprite fields
+            if (GUILayout.Button("Add Sprite")) _cursorTextures.Add(null);
+
+            EditorGUILayout.Space();
 
             if (GUILayout.Button("Create Cursor Data")) CreateCursorDataAsset();
         }
 
+
         private void CreateCursorDataAsset()
         {
-            if (_cursorTexture == null)
-            {
-                // Show an error message in the editor GUI
-                EditorUtility.DisplayDialog("Error", "Cursor Texture and Crosshair Texture must be set.", "OK");
-                return;
-            }
-
             var cursorData = CreateInstance<CursorData>();
-            cursorData.CursorTexture = _cursorTexture;
+            cursorData.CursorName = _cursorName;
+            cursorData.CursorTextures = _cursorTextures.ToArray();
+            cursorData.TextureUpdateDelay = _cursorTextureUpdateDelay;
             cursorData.HotSpot = _hotspot;
             cursorData.PixelSize = _pixelSize;
 
 
-            if (!Directory.Exists(_folderPath)) Directory.CreateDirectory(_folderPath);
-            var cursorDataPath = Path.Combine(_folderPath, $"{_cursorTexture.name}_CursorData.asset");
+            if (!Directory.Exists(_folderPath))
+                Directory.CreateDirectory(_folderPath);
+            var cursorDataPath = Path.Combine(_folderPath, $"{cursorData.name}_CursorData.asset");
 
             AssetDatabase.CreateAsset(cursorData, cursorDataPath);
             AssetDatabase.SaveAssets();
