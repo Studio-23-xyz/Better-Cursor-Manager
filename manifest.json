@@ -25,10 +25,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Global.CrosshairCursorDataEditorWindow.yml",
+      "source_relative_path": "api/Global.HoverableComponent.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Global.CrosshairCursorDataEditorWindow.html"
+          "relative_path": "api/Global.HoverableComponent.html"
         }
       },
       "version": ""
@@ -45,80 +45,110 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Core.BetterCursor.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Core.BetterCursor.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Core.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Core.CursorEventController.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Core.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Core.CursorEventController.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Core.CursorLocoMotionController.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Core.CursorLocoMotionController.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CursorData.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Core.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Core.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Data.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Data.CursorData.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Data.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Data.CursorData.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Data.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Data.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Editor.BetterCursorInstaller.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Editor.BetterCursorInstaller.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.yml",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Editor.CursorDataEditorWindow.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Studio23.SS2.BetterCursorManager.Editor.html"
+          "relative_path": "api/Studio23.SS2.BetterCursor.Editor.CursorDataEditorWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Editor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursor.Editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Interfaces.IHoverable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursor.Interfaces.IHoverable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Studio23.SS2.BetterCursor.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Studio23.SS2.BetterCursor.Interfaces.html"
         }
       },
       "version": ""

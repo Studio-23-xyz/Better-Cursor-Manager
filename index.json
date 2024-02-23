@@ -4,55 +4,70 @@
     "title": "Class CameraRotator | |",
     "keywords": "Class CameraRotator Namespace Global public class CameraRotator : MonoBehaviour Inheritance System.Object CameraRotator Fields MainCamera public Camera MainCamera Field Value Camera RotationSpeed public float RotationSpeed Field Value float"
   },
-  "api/Global.CrosshairCursorDataEditorWindow.html": {
-    "href": "api/Global.CrosshairCursorDataEditorWindow.html",
-    "title": "Class CrosshairCursorDataEditorWindow | |",
-    "keywords": "Class CrosshairCursorDataEditorWindow Namespace Global public class CrosshairCursorDataEditorWindow : EditorWindow Inheritance System.Object CrosshairCursorDataEditorWindow Methods ShowWindow() public static void ShowWindow()"
+  "api/Global.HoverableComponent.html": {
+    "href": "api/Global.HoverableComponent.html",
+    "title": "Class HoverableComponent | |",
+    "keywords": "Class HoverableComponent Namespace Global public class HoverableComponent : MonoBehaviour, IHoverable Inheritance System.Object HoverableComponent Implements IHoverable Fields CursorData public CursorData CursorData Field Value CursorData Methods OnHoverEnter() public void OnHoverEnter() OnHoverExit() public void OnHoverExit()"
   },
   "api/Global.html": {
     "href": "api/Global.html",
     "title": "Namespace | |",
-    "keywords": "Namespace Classes CameraRotator CrosshairCursorDataEditorWindow"
+    "keywords": "Namespace Classes CameraRotator HoverableComponent"
   },
-  "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Core.CursorManager.html",
-    "title": "Class CursorManager | |",
-    "keywords": "Class CursorManager Namespace Studio23.SS2.BetterCursorManager.Core public class CursorManager : MonoBehaviour Inheritance System.Object CursorManager Fields Instance public static CursorManager Instance Field Value CursorManager Methods ChangeCursorLockState(bool, bool) This method can be used to change the cursor lock state. public void ChangeCursorLockState(bool isLocked, bool shouldToggleCursorSprite = true) Parameters isLocked bool shouldToggleCursorSprite bool ChangeIntoCrosshair() Change default mouse Cursor mode into Crosshair mode. If crosshair or mouse cursor data not found it will load into default mouse cursor. public void ChangeIntoCrosshair() ChangeIntoCursor() Change crosshair mode to mouse cursor mode. If crosshair or mouse cursor data not found it will load into default mouse cursor. public void ChangeIntoCursor() Initialize() public void Initialize() SetCrosshair(CrosshairCursorData) This method will set the data according to the CrosshairCursorData Scriptable Class. Calling this method will change the overall data of the crosshair public void SetCrosshair(CrosshairCursorData crosshairCursorData) Parameters crosshairCursorData CrosshairCursorData SetCursor(CursorData) This method will set the data according to the CursorData Scriptable Class. Calling this method will change the overall data of the cursor public void SetCursor(CursorData cursorData) Parameters cursorData CursorData ToggleCursorSprite(bool) Enable or disable Cursor image public void ToggleCursorSprite(bool state) Parameters state bool"
+  "api/Studio23.SS2.BetterCursor.Core.BetterCursor.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Core.BetterCursor.html",
+    "title": "Class BetterCursor | |",
+    "keywords": "Class BetterCursor Namespace Studio23.SS2.BetterCursor.Core public class BetterCursor : MonoBehaviour Inheritance System.Object BetterCursor Fields CurrentCursor public CursorData CurrentCursor Field Value CursorData Instance public static BetterCursor Instance Field Value BetterCursor UiOnHoverEnabled public bool UiOnHoverEnabled Field Value bool Methods ChangeCursor(CursorData) This method will set the data according to the CursorData Scriptable Class. Calling this method will change the overall data of the cursor public void ChangeCursor(CursorData cursorData) Parameters cursorData CursorData ChangeCursorLockState(bool) This method can be used to change the cursor lock state. public void ChangeCursorLockState(bool isLocked) Parameters isLocked bool SetCursorState(bool) Sets cursor visibility and lockstate based on passed parameter public void SetCursorState(bool isLocked) Parameters isLocked bool SetCursorVisibilityState(bool) Enable or disable Cursor image public void SetCursorVisibilityState(bool state) Parameters state bool"
   },
-  "api/Studio23.SS2.BetterCursorManager.Core.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Core.html",
-    "title": "Namespace Studio23.SS2.BetterCursorManager.Core | |",
-    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Core Classes CursorManager"
+  "api/Studio23.SS2.BetterCursor.Core.CursorEventController.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Core.CursorEventController.html",
+    "title": "Class CursorEventController | |",
+    "keywords": "Class CursorEventController Namespace Studio23.SS2.BetterCursor.Core public class CursorEventController : MonoBehaviour Inheritance System.Object CursorEventController"
   },
-  "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Data.CrosshairCursorData.html",
-    "title": "Class CrosshairCursorData | |",
-    "keywords": "Class CrosshairCursorData Namespace Studio23.SS2.BetterCursorManager.Data public class CrosshairCursorData : ScriptableObject Inheritance System.Object CrosshairCursorData Fields CrosshairSprite public Sprite CrosshairSprite Field Value Sprite"
+  "api/Studio23.SS2.BetterCursor.Core.CursorLocoMotionController.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Core.CursorLocoMotionController.html",
+    "title": "Class CursorLocoMotionController | |",
+    "keywords": "Class CursorLocoMotionController Namespace Studio23.SS2.BetterCursor.Core public class CursorLocoMotionController : MonoBehaviour Inheritance System.Object CursorLocoMotionController Fields CursorActionAsset public InputActionAsset CursorActionAsset Field Value InputActionAsset Methods GetCursorImagePosition() public Vector2 GetCursorImagePosition() Returns Vector2"
   },
-  "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Data.CursorData.html",
+  "api/Studio23.SS2.BetterCursor.Core.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Core.html",
+    "title": "Namespace Studio23.SS2.BetterCursor.Core | |",
+    "keywords": "Namespace Studio23.SS2.BetterCursor.Core Classes BetterCursor CursorEventController CursorLocoMotionController"
+  },
+  "api/Studio23.SS2.BetterCursor.Data.CursorData.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Data.CursorData.html",
     "title": "Class CursorData | |",
-    "keywords": "Class CursorData Namespace Studio23.SS2.BetterCursorManager.Data public class CursorData : ScriptableObject Inheritance System.Object CursorData Fields CursorTexture public Sprite CursorTexture Field Value Sprite HotSpot public Vector2 HotSpot Field Value Vector2 PixelSize public Vector2 PixelSize Field Value Vector2"
+    "keywords": "Class CursorData Namespace Studio23.SS2.BetterCursor.Data public class CursorData : ScriptableObject Inheritance System.Object CursorData Fields CursorName public string CursorName Field Value string CursorTextures public Sprite[] CursorTextures Field Value Sprite[] HotSpot public Vector2 HotSpot Field Value Vector2 HoverMask public LayerMask HoverMask Field Value LayerMask PixelSize public Vector2 PixelSize Field Value Vector2 TextureUpdateDelay public float TextureUpdateDelay Field Value float"
   },
-  "api/Studio23.SS2.BetterCursorManager.Data.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Data.html",
-    "title": "Namespace Studio23.SS2.BetterCursorManager.Data | |",
-    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Data Classes CrosshairCursorData CursorData"
+  "api/Studio23.SS2.BetterCursor.Data.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Data.html",
+    "title": "Namespace Studio23.SS2.BetterCursor.Data | |",
+    "keywords": "Namespace Studio23.SS2.BetterCursor.Data Classes CursorData"
   },
-  "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Editor.BetterCursorUtility.html",
-    "title": "Class BetterCursorUtility | |",
-    "keywords": "Class BetterCursorUtility Namespace Studio23.SS2.BetterCursorManager.Editor public class BetterCursorUtility : UnityEditor.Editor Inheritance System.Object BetterCursorUtility"
+  "api/Studio23.SS2.BetterCursor.Editor.BetterCursorInstaller.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Editor.BetterCursorInstaller.html",
+    "title": "Class BetterCursorInstaller | |",
+    "keywords": "Class BetterCursorInstaller Namespace Studio23.SS2.BetterCursor.Editor public class BetterCursorInstaller : UnityEditor.Editor Inheritance System.Object BetterCursorInstaller"
   },
-  "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Editor.CursorDataEditorWindow.html",
+  "api/Studio23.SS2.BetterCursor.Editor.CursorDataEditorWindow.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Editor.CursorDataEditorWindow.html",
     "title": "Class CursorDataEditorWindow | |",
-    "keywords": "Class CursorDataEditorWindow Namespace Studio23.SS2.BetterCursorManager.Editor public class CursorDataEditorWindow : EditorWindow Inheritance System.Object CursorDataEditorWindow Methods ShowWindow() public static void ShowWindow()"
+    "keywords": "Class CursorDataEditorWindow Namespace Studio23.SS2.BetterCursor.Editor public class CursorDataEditorWindow : EditorWindow Inheritance System.Object CursorDataEditorWindow Methods ShowWindow() public static void ShowWindow()"
   },
-  "api/Studio23.SS2.BetterCursorManager.Editor.html": {
-    "href": "api/Studio23.SS2.BetterCursorManager.Editor.html",
-    "title": "Namespace Studio23.SS2.BetterCursorManager.Editor | |",
-    "keywords": "Namespace Studio23.SS2.BetterCursorManager.Editor Classes BetterCursorUtility CursorDataEditorWindow"
+  "api/Studio23.SS2.BetterCursor.Editor.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Editor.html",
+    "title": "Namespace Studio23.SS2.BetterCursor.Editor | |",
+    "keywords": "Namespace Studio23.SS2.BetterCursor.Editor Classes BetterCursorInstaller CursorDataEditorWindow"
+  },
+  "api/Studio23.SS2.BetterCursor.Interfaces.IHoverable.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Interfaces.IHoverable.html",
+    "title": "Interface IHoverable | |",
+    "keywords": "Interface IHoverable Namespace Studio23.SS2.BetterCursor.Interfaces public interface IHoverable Methods OnHoverEnter() void OnHoverEnter() OnHoverExit() void OnHoverExit()"
+  },
+  "api/Studio23.SS2.BetterCursor.Interfaces.html": {
+    "href": "api/Studio23.SS2.BetterCursor.Interfaces.html",
+    "title": "Namespace Studio23.SS2.BetterCursor.Interfaces | |",
+    "keywords": "Namespace Studio23.SS2.BetterCursor.Interfaces Interfaces IHoverable"
   },
   "api/index.html": {
     "href": "api/index.html",
@@ -62,7 +77,7 @@
   "changelog/CHANGELOG.html": {
     "href": "changelog/CHANGELOG.html",
     "title": "Changelog | |",
-    "keywords": "Changelog [v1.0.11] - 2024-30-01 Bug Fixes Fixed a bug where cursor always remains locked [v1.0.10] - 2024-25-01 Version update Updated unity version Bug Fixes Fixed a bug where creating cursor data results failed [v1.0.7] - 2023-12-06 Improvements Added Platform Define Symbols [v1.0.6] - 2023-11-06 New Features Introduced a new cursor management system with customizable cursor and crosshair options. Added a GUI for creating crosshair cursor data assets. Implemented a new camera rotation script based on mouse input. Improvements Enhanced cursor management with additional methods for cursor visibility and mode switching. Fixed Added checks to ensure cursor data is not null before loading. Tests Modified demo scene with changes in various Unity objects and components."
+    "keywords": "Changelog [v1.1.1] - 2024-2-22 Updated Cursor supports multiple sprites Supports Gamepad cursor Improved Cursor Bound Area [v1.1.0] - 2024-07-02 Updated Refactored how Better Cursor Works Cursor manager Renamed as BetterCursor Improved Editor Setup Support Added Animation Controller Added to manage Animation Locomotion Controller Added to manage Locomotion Event Controller Added to manage Events IHoverable Interface added to get Hovered object events in 3d Space [v1.0.11] - 2024-30-01 Bug Fixes Fixed a bug where cursor always remains locked [v1.0.10] - 2024-25-01 Version update Updated unity version Bug Fixes Fixed a bug where creating cursor data results failed [v1.0.7] - 2023-12-06 Improvements Added Platform Define Symbols [v1.0.6] - 2023-11-06 New Features Introduced a new cursor management system with customizable cursor and crosshair options. Added a GUI for creating crosshair cursor data assets. Implemented a new camera rotation script based on mouse input. Improvements Enhanced cursor management with additional methods for cursor visibility and mode switching. Fixed Added checks to ensure cursor data is not null before loading. Tests Modified demo scene with changes in various Unity objects and components."
   },
   "index.html": {
     "href": "index.html",
@@ -76,7 +91,7 @@
   },
   "manual/index.html": {
     "href": "manual/index.html",
-    "title": "Custom Cursor System for Unity | |",
-    "keywords": "Custom Cursor System for Unity This custom cursor system for Unity allows you to easily implement and manage custom cursors with configurable textures, hotspots, and pixel sizes. This README provides instructions on how to use this library in your Unity projects. Table of Contents Installation Usage [Creating Cursor Data](#Creating CursorData) [Creating a CursorCanvas prefab](#Installing CursorCanvas) [Setting Up CursorManager Script](#Using CursorManager script) Example License Installation Install via Git URL You can also use the \"Install from Git URL\" option from Unity Package Manager to install the package. https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm Usage Creating CursorData In the Unity Editor menu window, Studio-23 -> Better Cursor -> Create CursorData. A editor window will popup to create new cursor data. Place any sprite in \"Cursor Texture\" field. In the \"Hotspot\" field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f] In the \"Pixel Size\" field, put the preferable cursor's width and height [default value should be 32 , 32] A \"CursorCanvas\" gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes. Installing CursorCanvas In the Unity Editor menu window, Studio-23 -> Better Cursor -> Install Cursor . A \"CursorCanvas\" prefab will be generated in scene hierarchy. You only need to do this procedure once as this prefab will be persisted when scene changes. This prefab will have canvas component with a sorting order 200 so that it will stay on top of every canvas. Using CursorManager script The CursorCanvas gameobject will contain a CursorManager script. This script has instances. Use that instances to call function from this script. Cursor manager has a default cursor field in which already predefined cursordata is assigned. You can assign your created custom cursordata in this field. // Example code to change the cursor when a button is clicked: public void OnButtonClick() { CursorManager.Instance.ToggleCursor(true); } public void ChangeCursorLockState() { CursorManager.Instance.ChangeCursorLockState(true); }"
+    "title": "Better Cursor | |",
+    "keywords": "Better Cursor This custom cursor system for Unity allows you to easily implement and manage custom cursors with configurable textures, hotspots, and pixel sizes. This README provides instructions on how to use this library in your Unity projects. Table of Contents Installation Usage Creating Cursor Data Creating a CursorCanvas prefab Setting Up CursorManager Script Example License Installation Install via Git URL You can also use the \"Install from Git URL\" option from Unity Package Manager to install the package. https://github.com/Studio-23-xyz/Better-Cursor-Manager.git#upm Usage Creating CursorData In the Unity Editor menu window, Studio-23 -> Better Cursor -> Create CursorData. A editor window will popup to create new cursor data. Place any sprite in \"Cursor Texture\" field. In the Texture Update Delay field set how fast you want the textures to iterate.Lower is faster. Default : 0.1f In the Hotspot field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f] In the Pixel Size field, put the preferable cursor's width and height [default value should be 32 , 32] A CursorCanvas gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes. Installing CursorCanvas In the Unity Editor menu window, Studio-23 -> Better Cursor -> Install Cursor . A \"CursorCanvas\" prefab will be generated in scene hierarchy. You only need to do this procedure once as this prefab will be persisted when scene changes. This prefab will have canvas component with a sorting order 200 so that it will stay on top of every canvas. Using CursorManager script The CursorCanvas gameobject will contain a CursorManager script. This script has instances. Use that instances to call function from this script. Cursor manager has a default cursor field in which already predefined cursordata is assigned. You can assign your created custom cursordata in this field. // Example code to change the cursor when a button is clicked: public void OnButtonClick() { CursorManager.Instance.SetCursorVisibilityState(true) } public void ChangeCursorLockState() { CursorManager.Instance.ChangeCursorLockState(true); } > For more details check the scripting api docuementaion."
   }
 }

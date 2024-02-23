@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Custom Cursor System for Unity |  |  </title>
+      <title>Better Cursor |  |  </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Custom Cursor System for Unity |  |  ">
+      <meta name="title" content="Better Cursor |  |  ">
       
       
       <link rel="icon" href="../favicon.ico">
@@ -85,17 +85,19 @@
         </div>
 
         <article data-uid="">
-<h1 id="custom-cursor-system-for-unity">Custom Cursor System for Unity</h1>
-
+<h1 align="center">Better Cursor</h1>
+<p align="center">
+<a href="https://openupm.com/packages/com.studio23.ss2.bettercursormanager/"><img src="https://img.shields.io/npm/v/com.studio23.ss2.bettercursormanager?label=openupm&amp;registry_uri=https://package.openupm.com"></a>
+</p>
 <p>This custom cursor system for Unity allows you to easily implement and manage custom cursors with configurable textures, hotspots, and pixel sizes. This README provides instructions on how to use this library in your Unity projects.</p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a>
 <ul>
-<li>[Creating Cursor Data](#Creating CursorData)</li>
-<li>[Creating a CursorCanvas prefab](#Installing CursorCanvas)</li>
-<li>[Setting Up CursorManager Script](#Using CursorManager script)</li>
+<li><a href="#creating-cursorData">Creating Cursor Data</a></li>
+<li><a href="#installing-cursorCanvas">Creating a CursorCanvas prefab</a></li>
+<li><a href="#using-cursorManager-script">Setting Up CursorManager Script</a></li>
 </ul>
 </li>
 <li><a href="#example">Example</a></li>
@@ -113,11 +115,13 @@
 </li>
 <li><p>A editor window will popup to create new cursor data. Place any sprite in &quot;Cursor Texture&quot; field.</p>
 </li>
-<li><p>In the &quot;Hotspot&quot; field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]</p>
+<li><p>In the <code>Texture Update Delay</code> field set how fast you want the textures to iterate.Lower is faster. <strong>Default : 0.1f</strong></p>
 </li>
-<li><p>In the &quot;Pixel Size&quot; field, put the preferable cursor's width and height [default value should be 32 , 32]</p>
+<li><p>In the <code>Hotspot</code> field, put the rect transfrom's [where cursor texture will be placed in ui] preferable pivot position [default value should be .3f , .8f]</p>
 </li>
-<li><p>A &quot;CursorCanvas&quot; gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.</p>
+<li><p>In the <code>Pixel Size</code> field, put the preferable cursor's width and height [default value should be 32 , 32]</p>
+</li>
+<li><p>A <strong>CursorCanvas</strong> gameobject will be generated in scene hierarchy. You only need to do this procedure once for whole project as this gameobject will be persisted when scene changes.</p>
 </li>
 </ol>
 <h3 id="installing-cursorcanvas">Installing CursorCanvas</h3>
@@ -137,13 +141,18 @@
 <pre><code class="lang-csharp">// Example code to change the cursor when a button is clicked:
 public void OnButtonClick()
 {
-    CursorManager.Instance.ToggleCursor(true);
+    CursorManager.Instance.SetCursorVisibilityState(true)
 }
 
 public void ChangeCursorLockState()
 {
      CursorManager.Instance.ChangeCursorLockState(true);
 }
+
+&gt; For more details check the scripting api docuementaion.
+
+
+
 </code></pre>
 
 </article>
