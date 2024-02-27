@@ -9,7 +9,6 @@ namespace Studio23.SS2.BetterCursor.Core
         public static BetterCursor Instance;
 
         [SerializeField] private Canvas _canvas;
-        [SerializeField] private Camera _camera;
         public CursorData CurrentCursor;
 
         public bool UiOnHoverEnabled;
@@ -29,12 +28,6 @@ namespace Studio23.SS2.BetterCursor.Core
         private void Start()
         {
             Cursor.visible = false;
-
-            _camera = _camera ?? Camera.main;
-            if (_camera == null)
-                Debug.LogError(
-                    "No Camera assigned on Better Cursor.It must be assigned for it to work.Or Tag a camera as MainCamera");
-
             _canvas = GetComponent<Canvas>();
             _eventController = GetComponentInChildren<CursorEventController>();
             _locoMotionController = GetComponentInChildren<CursorLocoMotionController>();
@@ -47,11 +40,11 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void Initialize()
         {
-            if (CurrentCursor == null) CurrentCursor = Resources.Load<CursorData>("Default Cursor");
+            if (CurrentCursor == null) CurrentCursor = Resources.Load<CursorData>("BetterCursor/DefaultCursor");
 
             _locoMotionController.Initialize(_canvas, CurrentCursor);
             _animationController.Initialize(CurrentCursor);
-            _eventController.Initialize(CurrentCursor.HoverMask, _camera);
+            _eventController.Initialize(CurrentCursor.HoverMask);
         }
 
 

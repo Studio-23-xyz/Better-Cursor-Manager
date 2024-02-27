@@ -574,8 +574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45165d0f9a8c28499e54f2743a8a5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  virtualMouseInput: {fileID: 0}
-  UpdateType: 1
 --- !u!1 &809512755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1441,7 +1439,7 @@ PrefabInstance:
     - target: {fileID: 7336245767162126879, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
       propertyPath: CurrentCursor
       value: 
-      objectReference: {fileID: 11400000, guid: 10a1552d8eaa24148bd00b323462c54b, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 7336245767162126879, guid: 6f1f4d77124f8ca4b8c6d44b7eb163c9, type: 3}
       propertyPath: UiOnHoverEnabled
       value: 0

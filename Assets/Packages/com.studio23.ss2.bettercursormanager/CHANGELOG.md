@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.1.2] - 2024-2-27
+
+## Updated
++ Fixed cursor main camera assignment bug
+
+
+
 ## [v1.1.1] - 2024-2-22
 
 ## Updated
