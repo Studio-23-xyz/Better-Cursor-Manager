@@ -15,10 +15,9 @@ namespace Studio23.SS2.BetterCursor.Core
         private readonly List<RaycastResult> _raycastResults = new();
         private CursorLocoMotionController _cursorLocoMotionController;
 
-        internal void Initialize(LayerMask layerMask, Camera mainCamera)
+        internal void Initialize(LayerMask layerMask)
         {
             _layerMask = layerMask;
-            _camera = mainCamera;
         }
 
         private void Start()
@@ -53,6 +52,11 @@ namespace Studio23.SS2.BetterCursor.Core
         private GameObject GetHoveredObject()
         {
             RaycastHit hit;
+
+            if (_camera == null)
+            {
+                _camera = Camera.main;
+            }
             var ray = _camera.ScreenPointToRay(GetComponent<CursorLocoMotionController>().GetCursorImagePosition());
 
             if (Physics.Raycast(ray, out hit, int.MaxValue, _layerMask)) return hit.collider.gameObject;
