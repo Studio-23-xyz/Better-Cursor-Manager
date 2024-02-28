@@ -15,7 +15,6 @@ namespace Studio23.SS2.BetterCursor.Core
         private Vector2 _minScreenBounds;
         private Vector2 _maxScreenBounds;
 
-        private InputDevice _lastUsedDevice;
 
 
         private void Awake()
@@ -33,7 +32,6 @@ namespace Studio23.SS2.BetterCursor.Core
         private void Start()
         {
             SetupBounds();
-            SetupLastUsedDevice();
         }
 
         private void Update()
@@ -50,7 +48,7 @@ namespace Studio23.SS2.BetterCursor.Core
         private void UpdateCursorPosition()
         {
             var cursorPosition = CursorActionAsset["CursorPosition"].ReadValue<Vector2>();
-            if (IsController())
+            if (BetterCursor.Instance.IsController())
                 HandleControllerInput(cursorPosition);
             else
                 HandleMouseInput(cursorPosition);
@@ -86,24 +84,6 @@ namespace Studio23.SS2.BetterCursor.Core
             var uiElementSize = _cursorTransform.sizeDelta / 2.0f;
             _minScreenBounds = new Vector2(uiElementSize.x / 2, uiElementSize.y / 2);
             _maxScreenBounds = screenSizeInCanvas;
-        }
-
-        private void SetupLastUsedDevice()
-        {
-            InputSystem.onActionChange += (obj, change) =>
-            {
-                if (change == InputActionChange.ActionPerformed)
-                {
-                    var inputAction = (InputAction)obj;
-                    var lastControl = inputAction.activeControl;
-                    _lastUsedDevice = lastControl.device;
-                }
-            };
-        }
-
-        private bool IsController()
-        {
-            return !(_lastUsedDevice is Keyboard || _lastUsedDevice is Mouse);
         }
     }
 }

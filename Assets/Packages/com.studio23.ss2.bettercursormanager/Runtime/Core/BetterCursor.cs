@@ -1,6 +1,8 @@
 using System;
 using Studio23.SS2.BetterCursor.Data;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace Studio23.SS2.BetterCursor.Core
 {
@@ -16,6 +18,9 @@ namespace Studio23.SS2.BetterCursor.Core
         private CursorAnimationController _animationController;
         private CursorLocoMotionController _locoMotionController;
         private CursorEventController _eventController;
+
+        public UnityEvent<InputDevice> OnDeviceChanged;
+        private InputDevice _lastUsedDevice;
 
         private void Awake()
         {
@@ -35,6 +40,7 @@ namespace Studio23.SS2.BetterCursor.Core
             Initialize();
             ChangeCursor(CurrentCursor);
             ChangeCursorLockState(false);
+            SetupLastUsedDevice();
         }
 
 
@@ -94,6 +100,25 @@ namespace Studio23.SS2.BetterCursor.Core
         public void ChangeCursorLockState(bool isLocked)
         {
             Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.Confined;
+        }
+
+        public bool IsController()
+        {
+            return !(_lastUsedDevice is Keyboard || _lastUsedDevice is Mouse);
+        }
+
+        private void SetupLastUsedDevice()
+        {
+            InputSystem.onActionChange += (obj, change) =>
+            {
+                if (change == InputActionChange.ActionPerformed)
+                {
+                    var inputAction = (InputAction)obj;
+                    var lastControl = inputAction.activeControl;
+                    _lastUsedDevice = lastControl.device;
+                    OnDeviceChanged?.Invoke(_lastUsedDevice);
+                }
+            };
         }
     }
 }
