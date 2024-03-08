@@ -10,7 +10,7 @@ namespace Studio23.SS2.BetterCursor.Data
         public Vector2 HotSpot = Vector2.zero;
         public Vector2 PixelSize = new(32, 32);
         public LayerMask HoverMask;
-
+        public float SphereCastRadius = .005f;
         public float TextureUpdateDelay=0.1f;
     }
 }

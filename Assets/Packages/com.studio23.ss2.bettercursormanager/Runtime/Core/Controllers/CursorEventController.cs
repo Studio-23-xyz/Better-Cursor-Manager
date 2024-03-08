@@ -9,15 +9,16 @@ namespace Studio23.SS2.BetterCursor.Core
     public class CursorEventController : MonoBehaviour
     {
         private IHoverable _lastHoveredObject;
-
         private LayerMask _layerMask;
+        private float _sphereCastRadius;
         private Camera _camera;
         private readonly List<RaycastResult> _raycastResults = new();
         private CursorLocoMotionController _cursorLocoMotionController;
 
-        internal void Initialize(LayerMask layerMask)
+        internal void Initialize(LayerMask layerMask, float castRadius)
         {
             _layerMask = layerMask;
+            _sphereCastRadius = castRadius;
         }
 
         private void Start()
@@ -52,15 +53,13 @@ namespace Studio23.SS2.BetterCursor.Core
         private GameObject GetHoveredObject()
         {
             RaycastHit hit;
-
             if (_camera == null)
             {
                 _camera = Camera.main;
             }
-            var ray = _camera.ScreenPointToRay(GetComponent<CursorLocoMotionController>().GetCursorImagePosition());
-
-            if (Physics.Raycast(ray, out hit, int.MaxValue, _layerMask)) return hit.collider.gameObject;
-
+            var ray = _camera.ScreenPointToRay(BetterCursor.Instance.GetCursorImagePosition());
+            if(Physics.SphereCast(ray, _sphereCastRadius, out hit, int.MaxValue, _layerMask))
+                return hit.collider.gameObject;
             return null;
         }
 
@@ -74,9 +73,8 @@ namespace Studio23.SS2.BetterCursor.Core
 
             _raycastResults.Clear(); // Clear the list before using it again
             EventSystem.current.RaycastAll(pointerEventData, _raycastResults);
-
-            if (_raycastResults.Count > 0) return _raycastResults[0].gameObject;
-
+            if (_raycastResults.Count > 0)
+                return _raycastResults[0].gameObject;
             return null;
         }
     }

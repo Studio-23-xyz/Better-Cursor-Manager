@@ -10,6 +10,7 @@ namespace Studio23.SS2.BetterCursor.Core
         [SerializeField] private Image _iconHolder;
 
         private int _cursorIndex;
+        private CursorData _cursorData;
 
         void Awake()
         {
@@ -18,6 +19,7 @@ namespace Studio23.SS2.BetterCursor.Core
 
         internal void Initialize(CursorData cursorData)
         {
+            _cursorData = cursorData;
             StopAllCoroutines();
             StartCoroutine(UpdateCursorTextures(cursorData.CursorTextures, cursorData.TextureUpdateDelay));
         }

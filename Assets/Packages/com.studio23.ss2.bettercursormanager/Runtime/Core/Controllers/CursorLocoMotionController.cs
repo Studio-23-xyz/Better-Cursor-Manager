@@ -1,7 +1,7 @@
+using System;
 using Studio23.SS2.BetterCursor.Data;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace Studio23.SS2.BetterCursor.Core
 {
@@ -27,10 +27,6 @@ namespace Studio23.SS2.BetterCursor.Core
             _canvas = canvas;
             _cursorTransform.sizeDelta = cursorData.PixelSize;
             _cursorTransform.pivot = cursorData.HotSpot;
-        }
-
-        private void Start()
-        {
             SetupBounds();
         }
 
@@ -40,9 +36,9 @@ namespace Studio23.SS2.BetterCursor.Core
         }
 
 
-        public Vector2 GetCursorImagePosition()
+        internal Vector2 GetCursorImagePosition()
         {
-            return _cursorTransform.anchoredPosition;
+            return _cursorTransform.anchoredPosition* _canvas.scaleFactor;
         }
 
         private void UpdateCursorPosition()
@@ -71,16 +67,15 @@ namespace Studio23.SS2.BetterCursor.Core
                 _canvas.worldCamera,
                 out var localMousePosition
             );
-
             _cursorTransform.localPosition = localMousePosition;
         }
 
+
         private void SetupBounds()
         {
-            var canvas = _cursorTransform.GetComponentInParent<Canvas>();
-            float screenWidth = Screen.width;
-            float screenHeight = Screen.height;
-            var screenSizeInCanvas = new Vector2(screenWidth, screenHeight) / canvas.scaleFactor;
+            float screenWidth = Screen.width/ _canvas.scaleFactor;
+            float screenHeight = Screen.height/ _canvas.scaleFactor;
+            var screenSizeInCanvas = new Vector2(screenWidth, screenHeight);
             var uiElementSize = _cursorTransform.sizeDelta / 2.0f;
             _minScreenBounds = new Vector2(uiElementSize.x / 2, uiElementSize.y / 2);
             _maxScreenBounds = screenSizeInCanvas;

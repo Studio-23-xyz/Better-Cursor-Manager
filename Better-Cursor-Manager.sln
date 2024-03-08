@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.studio23.ss2.bettercursormanager", "com.studio23.ss2.bettercursormanager.csproj", "{3E76CB17-D716-154D-E3CA-3499B2A61018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{97CDE067-F9B5-2775-8A87-8E2182939C81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.studio23.ss2.bettercursormanager.editor", "com.studio23.ss2.bettercursormanager.editor.csproj", "{F8931CC7-9A19-AD52-A55D-A7876863CABF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E76CB17-D716-154D-E3CA-3499B2A61018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E76CB17-D716-154D-E3CA-3499B2A61018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E76CB17-D716-154D-E3CA-3499B2A61018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E76CB17-D716-154D-E3CA-3499B2A61018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97CDE067-F9B5-2775-8A87-8E2182939C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97CDE067-F9B5-2775-8A87-8E2182939C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97CDE067-F9B5-2775-8A87-8E2182939C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97CDE067-F9B5-2775-8A87-8E2182939C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8931CC7-9A19-AD52-A55D-A7876863CABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8931CC7-9A19-AD52-A55D-A7876863CABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8931CC7-9A19-AD52-A55D-A7876863CABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8931CC7-9A19-AD52-A55D-A7876863CABF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
