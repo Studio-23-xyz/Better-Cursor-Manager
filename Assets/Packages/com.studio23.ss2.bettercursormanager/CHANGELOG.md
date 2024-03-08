@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.1.3] - 2024-3-08
+
+## Updated
+
++ Added cursor movement function for controller
++ Fixed cursor visibility function
++ Fixed Cursor not showing properly in different scale
+
 ## [v1.1.2] - 2024-2-27
 
 ## Updated

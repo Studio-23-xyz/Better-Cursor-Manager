@@ -1,6 +1,8 @@
 using System;
 using Studio23.SS2.BetterCursor.Data;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 namespace Studio23.SS2.BetterCursor.Core
 {
@@ -17,6 +19,9 @@ namespace Studio23.SS2.BetterCursor.Core
         private CursorLocoMotionController _locoMotionController;
         private CursorEventController _eventController;
 
+        public UnityEvent OnDeviceChanged;
+        private InputDevice _lastUsedDevice;
+
         private void Awake()
         {
             if (Instance == null)
@@ -29,12 +34,13 @@ namespace Studio23.SS2.BetterCursor.Core
         {
             Cursor.visible = false;
             _canvas = GetComponent<Canvas>();
-            _eventController = GetComponentInChildren<CursorEventController>();
-            _locoMotionController = GetComponentInChildren<CursorLocoMotionController>();
-            _animationController = GetComponentInChildren<CursorAnimationController>();
+            _eventController = GetComponentInChildren<CursorEventController>(true);
+            _locoMotionController = GetComponentInChildren<CursorLocoMotionController>(true);
+            _animationController = GetComponentInChildren<CursorAnimationController>(true);
             Initialize();
             ChangeCursor(CurrentCursor);
             ChangeCursorLockState(false);
+            SetupLastUsedDevice();
         }
 
 
@@ -44,7 +50,7 @@ namespace Studio23.SS2.BetterCursor.Core
 
             _locoMotionController.Initialize(_canvas, CurrentCursor);
             _animationController.Initialize(CurrentCursor);
-            _eventController.Initialize(CurrentCursor.HoverMask);
+            _eventController.Initialize(CurrentCursor.HoverMask, CurrentCursor.SphereCastRadius);
         }
 
 
@@ -65,18 +71,6 @@ namespace Studio23.SS2.BetterCursor.Core
             Initialize();
         }
 
-
-        /// <summary>
-        ///  Sets cursor visibility and lockstate based on passed parameter
-        /// </summary>
-        /// <param name="isLocked"></param>
-        public void SetCursorState(bool isLocked)
-        {
-            SetCursorVisibilityState(isLocked);
-            ChangeCursorLockState(!isLocked);
-        }
-
-
         /// <summary>
         ///     Enable or disable Cursor image
         /// </summary>
@@ -85,8 +79,6 @@ namespace Studio23.SS2.BetterCursor.Core
         {
             _animationController.gameObject.SetActive(state);
         }
-
-
         /// <summary>
         ///     This method can be used to change the cursor lock state.
         /// </summary>
@@ -94,6 +86,30 @@ namespace Studio23.SS2.BetterCursor.Core
         public void ChangeCursorLockState(bool isLocked)
         {
             Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.Confined;
+        }
+
+        public bool IsController()
+        {
+            return !(_lastUsedDevice is Keyboard || _lastUsedDevice is Mouse);
+        }
+
+        private void SetupLastUsedDevice()
+        {
+            InputSystem.onActionChange += (obj, change) =>
+            {
+                if (change == InputActionChange.ActionPerformed)
+                {
+                    var inputAction = (InputAction)obj;
+                    var lastControl = inputAction.activeControl;
+                    _lastUsedDevice = lastControl.device;
+                    OnDeviceChanged?.Invoke();
+                }
+            };
+        }
+
+        public Vector2 GetCursorImagePosition()
+        {
+            return _locoMotionController.GetCursorImagePosition();
         }
     }
 }
