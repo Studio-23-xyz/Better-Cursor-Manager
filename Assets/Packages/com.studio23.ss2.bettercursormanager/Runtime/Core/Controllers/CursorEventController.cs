@@ -67,8 +67,7 @@ namespace Studio23.SS2.BetterCursor.Core
         {
             var pointerEventData = new PointerEventData(EventSystem.current)
             {
-                position =
-                    _cursorLocoMotionController.CursorActionAsset["CursorPosition"].ReadValue<Vector2>()
+                position = _cursorLocoMotionController.GetCursorPosition()
             };
 
             _raycastResults.Clear(); // Clear the list before using it again

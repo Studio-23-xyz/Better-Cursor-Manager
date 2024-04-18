@@ -27,17 +27,24 @@ namespace Studio23.SS2.BetterCursor.Core
         private IEnumerator UpdateCursorTextures(Sprite[] sprites, float updateDelay)
         {
             _cursorIndex = 0;
-            _iconHolder.sprite = sprites[_cursorIndex++];
+            _iconHolder.sprite = sprites[_cursorIndex];
             while (sprites.Length > 1)
             {
                 yield return new WaitForSeconds(updateDelay);
 
-                _iconHolder.sprite = sprites[_cursorIndex++];
-                if (_cursorIndex == sprites.Length)
+                _cursorIndex++;
+
+                if (_cursorIndex >= sprites.Length)
                 {
                     _cursorIndex = 0;
                 }
+                _iconHolder.sprite = sprites[_cursorIndex];
             }
+        }
+
+        void Update()
+        {
+            Debug.LogError($"Image Name {_iconHolder.sprite}");
         }
     }
 }
