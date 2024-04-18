@@ -43,17 +43,13 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void UpdateCursorPosition()
         {
-            Debug.LogError($"Cursor Position : {cursorPosition}");
             if (BetterCursor.Instance.IsController())
                 HandleControllerInput(cursorPosition);
             else
                 HandleMouseInput(cursorPosition);
         }
 
-        public void UpdateCursorPosition(Vector2 val)
-        {
-            cursorPosition = val;
-        }
+
 
         private void HandleControllerInput(Vector2 position)
         {
@@ -86,9 +82,10 @@ namespace Studio23.SS2.BetterCursor.Core
             _maxScreenBounds = screenSizeInCanvas;
         }
 
-        public void SetCursorPosition(Vector2 cursorPos)
+
+        public void UpdateCursorPosition(Vector2 val)
         {
-            _cursorPosition = cursorPos;
+            cursorPosition = val;
         }
 
         public Vector2 GetCursorPosition()
