@@ -1,4 +1,4 @@
-using System;
+
 using Studio23.SS2.BetterCursor.Data;
 using UnityEngine;
 using UnityEngine.Events;

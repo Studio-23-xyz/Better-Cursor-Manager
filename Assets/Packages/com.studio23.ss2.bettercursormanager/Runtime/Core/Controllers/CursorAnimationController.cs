@@ -41,10 +41,5 @@ namespace Studio23.SS2.BetterCursor.Core
                 _iconHolder.sprite = sprites[_cursorIndex];
             }
         }
-
-        void Update()
-        {
-            Debug.LogError($"Image Name {_iconHolder.sprite}");
-        }
     }
 }

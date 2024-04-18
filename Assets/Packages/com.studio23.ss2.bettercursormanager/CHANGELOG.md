@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.1.5] - 2024-04-18
+
+## Updated
+
++ Added function to update cursor postion
+
+
 ## [v1.1.3] - 2024-3-08
 
 ## Updated
