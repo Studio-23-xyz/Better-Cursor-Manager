@@ -37,15 +37,16 @@ namespace Studio23.SS2.BetterCursor.Core
             _eventController = GetComponentInChildren<CursorEventController>(true);
             _locoMotionController = GetComponentInChildren<CursorLocoMotionController>(true);
             _animationController = GetComponentInChildren<CursorAnimationController>(true);
-            Initialize();
             ChangeCursor(CurrentCursor);
             ChangeCursorLockState(false);
             SetupLastUsedDevice();
         }
 
 
+
         private void Initialize()
         {
+            
             if (CurrentCursor == null) CurrentCursor = Resources.Load<CursorData>("BetterCursor/DefaultCursor");
 
             _locoMotionController.Initialize(_canvas, CurrentCursor);
@@ -110,6 +111,11 @@ namespace Studio23.SS2.BetterCursor.Core
         public Vector2 GetCursorImagePosition()
         {
             return _locoMotionController.GetCursorImagePosition();
+        }
+
+        public void UpdateCursorPosition(Vector2 cursorPos)
+        {
+            _locoMotionController.UpdateCursorPosition(cursorPos);
         }
     }
 }

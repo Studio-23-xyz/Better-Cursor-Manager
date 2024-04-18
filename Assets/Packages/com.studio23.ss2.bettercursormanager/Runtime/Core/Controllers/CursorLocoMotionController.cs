@@ -10,11 +10,11 @@ namespace Studio23.SS2.BetterCursor.Core
         [SerializeField] private RectTransform _cursorTransform;
         [SerializeField] private Canvas _canvas;
         [SerializeField] private float _cursorSpeed = 1000f;
-        public InputActionAsset CursorActionAsset;
 
+        private Vector2 _cursorPosition;
         private Vector2 _minScreenBounds;
         private Vector2 _maxScreenBounds;
-
+        private Vector2 cursorPosition;
 
 
         private void Awake()
@@ -38,16 +38,21 @@ namespace Studio23.SS2.BetterCursor.Core
 
         internal Vector2 GetCursorImagePosition()
         {
-            return _cursorTransform.anchoredPosition* _canvas.scaleFactor;
+            return _cursorTransform.anchoredPosition * _canvas.scaleFactor;
         }
 
         private void UpdateCursorPosition()
         {
-            var cursorPosition = CursorActionAsset["CursorPosition"].ReadValue<Vector2>();
+            Debug.LogError($"Cursor Position : {cursorPosition}");
             if (BetterCursor.Instance.IsController())
                 HandleControllerInput(cursorPosition);
             else
                 HandleMouseInput(cursorPosition);
+        }
+
+        public void UpdateCursorPosition(Vector2 val)
+        {
+            cursorPosition = val;
         }
 
         private void HandleControllerInput(Vector2 position)
@@ -79,6 +84,16 @@ namespace Studio23.SS2.BetterCursor.Core
             var uiElementSize = _cursorTransform.sizeDelta / 2.0f;
             _minScreenBounds = new Vector2(uiElementSize.x / 2, uiElementSize.y / 2);
             _maxScreenBounds = screenSizeInCanvas;
+        }
+
+        public void SetCursorPosition(Vector2 cursorPos)
+        {
+            _cursorPosition = cursorPos;
+        }
+
+        public Vector2 GetCursorPosition()
+        {
+            return _cursorPosition;
         }
     }
 }
