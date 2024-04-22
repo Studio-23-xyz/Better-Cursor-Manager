@@ -24,6 +24,11 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void Awake()
         {
+            _canvas = GetComponent<Canvas>();
+            _eventController = GetComponentInChildren<CursorEventController>(true);
+            _locoMotionController = GetComponentInChildren<CursorLocoMotionController>(true);
+            _animationController = GetComponentInChildren<CursorAnimationController>(true);
+            
             if (Instance == null)
                 Instance = this;
             else
@@ -33,10 +38,7 @@ namespace Studio23.SS2.BetterCursor.Core
         private void Start()
         {
             Cursor.visible = false;
-            _canvas = GetComponent<Canvas>();
-            _eventController = GetComponentInChildren<CursorEventController>(true);
-            _locoMotionController = GetComponentInChildren<CursorLocoMotionController>(true);
-            _animationController = GetComponentInChildren<CursorAnimationController>(true);
+
             ChangeCursor(CurrentCursor);
             ChangeCursorLockState(false);
             SetupLastUsedDevice();
@@ -46,7 +48,6 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void Initialize()
         {
-            
             if (CurrentCursor == null) CurrentCursor = Resources.Load<CursorData>("BetterCursor/DefaultCursor");
 
             _locoMotionController.Initialize(_canvas, CurrentCursor);
