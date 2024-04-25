@@ -10,10 +10,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3C47FC25-DBD6-390A-78E6-C795C0B75D58}</ProjectGuid>
+    <ProjectGuid>{C0832BF0-CAD4-8BEB-C39C-54D528584F15}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>UniTask.DOTween</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -60,31 +60,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\HoverableComponent.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\CameraRotator.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\External\DOTween\DOTweenAsyncExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\External\DOTween\UniTask.DOTween.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -849,69 +828,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
-      <Project>{DCBA958B-F145-58F4-F598-4F89D403EA83}</Project>
-      <Name>Unity.AI.Navigation.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.TextMeshPro.Player.csproj">
-      <Project>{9F81A24C-10CF-D503-15BE-2D31BF7A9B76}</Project>
-      <Name>UniTask.TextMeshPro.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.DOTween.Player.csproj">
-      <Project>{C0832BF0-CAD4-8BEB-C39C-54D528584F15}</Project>
-      <Name>UniTask.DOTween.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Addressables.Player.csproj">
-      <Project>{27CCF6BB-8A1F-A541-0CB2-885C9E4EA925}</Project>
-      <Name>UniTask.Addressables.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{9C88E8B3-06B7-254F-1193-3EBB845D5FE0}</Project>
-      <Name>Unity.VisualScripting.Core.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{7D6C8AB0-1846-F5FB-3331-69FA479D4CC6}</Project>
-      <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Linq.Player.csproj">
-      <Project>{2B7990A7-4264-2F10-6040-14593BDC6D68}</Project>
-      <Name>UniTask.Linq.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{D25F579F-C297-5536-6178-C9B3DB418B4D}</Project>
-      <Name>Unity.VisualScripting.Flow.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{D9BCEAE0-BC0A-240C-B281-785D55D986DE}</Project>
-      <Name>Unity.Timeline.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.Player.csproj">
-      <Project>{A7A588D4-00DD-4C35-83B2-27D3D5B51017}</Project>
-      <Name>Unity.InputSystem.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.ForUI.Player.csproj">
-      <Project>{E6988BA6-93BC-758E-4401-C8E19075DEE7}</Project>
-      <Name>Unity.InputSystem.ForUI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.studio23.ss2.bettercursormanager.Player.csproj">
-      <Project>{C4BE8544-724B-DB93-0BDD-AE394C98C3F7}</Project>
-      <Name>com.studio23.ss2.bettercursormanager.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{B79650E2-5DC0-49B7-B370-7DB1B98BD55A}</Project>
-      <Name>Unity.TextMeshPro.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="UniTask.Player.csproj">
       <Project>{D906C957-2A95-9D78-C11B-9EE52FB76822}</Project>
       <Name>UniTask.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{1E98675B-9709-95C9-B1BF-C42FB83C93AE}</Project>
-      <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.Player.csproj">
-      <Project>{E8C052D5-141A-9E5A-9E91-93F85650ED6E}</Project>
-      <Name>Cinemachine.Player</Name>
+    <ProjectReference Include="UnityEngine.UI.Player.csproj">
+      <Project>{7D6C8AB0-1846-F5FB-3331-69FA479D4CC6}</Project>
+      <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

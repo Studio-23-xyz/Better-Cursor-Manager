@@ -2,7 +2,8 @@
     "name": "com.studio23.ss2.bettercursormanager",
     "rootNamespace": "",
     "references": [
-        "Unity.InputSystem"
+        "Unity.InputSystem",
+        "UniTask"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

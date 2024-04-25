@@ -57,6 +57,12 @@ namespace Studio23.SS2.BetterCursor.Core
             {
                 _camera = Camera.main;
             }
+
+            if (_camera == null)
+            {
+                Debug.LogError($"Main Camera Not Found");
+            }
+
             var ray = _camera.ScreenPointToRay(BetterCursor.Instance.GetCursorImagePosition());
             if(Physics.SphereCast(ray, _sphereCastRadius, out hit, int.MaxValue, _layerMask))
                 return hit.collider.gameObject;

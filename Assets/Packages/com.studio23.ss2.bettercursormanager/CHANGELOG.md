@@ -1,5 +1,14 @@
 # Changelog
 
+
+## [v1.1.7] - 2024-04-18
+
+## Updated
+
++ Removed Co-routine and added async function
+
+
+
 ## [v1.1.5] - 2024-04-18
 
 ## Updated
