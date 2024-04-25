@@ -10,10 +10,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3C47FC25-DBD6-390A-78E6-C795C0B75D58}</ProjectGuid>
+    <ProjectGuid>{D906C957-2A95-9D78-C11B-9EE52FB76822}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>UniTask</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\Player\</OutputPath>
-    <DefineConstants>UNITY_2022_3_14;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>UNITY_2022_3_14;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITASK_ASSETBUNDLE_SUPPORT;UNITASK_PHYSICS_SUPPORT;UNITASK_PHYSICS2D_SUPPORT;UNITASK_PARTICLESYSTEM_SUPPORT;UNITASK_UGUI_SUPPORT;UNITASK_WEBREQUEST_SUPPORT;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169;USG0001</NoWarn>
@@ -60,31 +60,83 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.14f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\HoverableComponent.cs" />
-    <Compile Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\CameraRotator.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.WaitUntil.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityAsyncExtensions.Jobs.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\StatePool.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.Threading.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTaskVoid.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\ContinuationQueue.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\CompilerServices\AsyncMethodBuilderAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityAsyncExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\IUniTaskSource.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\UnityWebRequestExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\CancellationTokenEqualityComparer.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\AsyncUnit.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\CancellationTokenSourceExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\EnumeratorAsyncExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\ExceptionExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Triggers\AsyncTriggerBase.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\UnityEqualityComparer.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\IUniTaskAsyncEnumerable.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\_InternalVisibleTo.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\TaskTracker.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityAsyncExtensions.AssetBundleRequestAllAssets.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\AsyncLazy.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Progress.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\MoveNextSource.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityAsyncExtensions.MonoBehaviour.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTaskExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\CancellationTokenExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\DiagnosticsExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.Factory.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.WhenAll.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTaskCompletionSource.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\ArrayPool.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\CompilerServices\AsyncUniTaskMethodBuilder.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\PlayerLoopHelper.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityBindingExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\MinimumQueue.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\EnumerableAsyncExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTaskScheduler.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\PlayerLoopTimer.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\PlayerLoopRunner.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Triggers\AsyncTriggerExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\PooledDelegate.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTaskExtensions.Shorthand.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\WeakDictionary.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.WhenAny.Generated.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityAsyncExtensions.uGUI.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.Delay.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Triggers\MonoBehaviourMessagesTriggers.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\ArrayPoolUtil.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.WhenAny.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\ValueStopwatch.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Triggers\AsyncStartTrigger.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\TimeoutController.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\RuntimeHelpersAbstraction.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\TaskPool.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Triggers\AsyncAwakeTrigger.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityWebRequestException.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\CompilerServices\AsyncUniTaskVoidMethodBuilder.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\Error.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Internal\ArrayUtil.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\TriggerEvent.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTaskObservableExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityAwaitableExtensions.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.AsValueTask.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\CompilerServices\StateMachineRunner.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.Run.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\AsyncReactiveProperty.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UnityAsyncExtensions.AsyncGPUReadback.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTaskSynchronizationContext.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.WhenAll.Generated.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.Bridge.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Triggers\AsyncDestroyTrigger.cs" />
+    <Compile Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\Channel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\Packages\com.studio23.ss2.bettercursormanager\Samples\Demo1\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Library\PackageCache\com.cysharp.unitask@2.5.4\Runtime\UniTask.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -849,69 +901,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.AI.Navigation.Player.csproj">
-      <Project>{DCBA958B-F145-58F4-F598-4F89D403EA83}</Project>
-      <Name>Unity.AI.Navigation.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.TextMeshPro.Player.csproj">
-      <Project>{9F81A24C-10CF-D503-15BE-2D31BF7A9B76}</Project>
-      <Name>UniTask.TextMeshPro.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.DOTween.Player.csproj">
-      <Project>{C0832BF0-CAD4-8BEB-C39C-54D528584F15}</Project>
-      <Name>UniTask.DOTween.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Addressables.Player.csproj">
-      <Project>{27CCF6BB-8A1F-A541-0CB2-885C9E4EA925}</Project>
-      <Name>UniTask.Addressables.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{9C88E8B3-06B7-254F-1193-3EBB845D5FE0}</Project>
-      <Name>Unity.VisualScripting.Core.Player</Name>
-    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{7D6C8AB0-1846-F5FB-3331-69FA479D4CC6}</Project>
       <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Linq.Player.csproj">
-      <Project>{2B7990A7-4264-2F10-6040-14593BDC6D68}</Project>
-      <Name>UniTask.Linq.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{D25F579F-C297-5536-6178-C9B3DB418B4D}</Project>
-      <Name>Unity.VisualScripting.Flow.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{D9BCEAE0-BC0A-240C-B281-785D55D986DE}</Project>
-      <Name>Unity.Timeline.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.Player.csproj">
-      <Project>{A7A588D4-00DD-4C35-83B2-27D3D5B51017}</Project>
-      <Name>Unity.InputSystem.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InputSystem.ForUI.Player.csproj">
-      <Project>{E6988BA6-93BC-758E-4401-C8E19075DEE7}</Project>
-      <Name>Unity.InputSystem.ForUI.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.studio23.ss2.bettercursormanager.Player.csproj">
-      <Project>{C4BE8544-724B-DB93-0BDD-AE394C98C3F7}</Project>
-      <Name>com.studio23.ss2.bettercursormanager.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{B79650E2-5DC0-49B7-B370-7DB1B98BD55A}</Project>
-      <Name>Unity.TextMeshPro.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UniTask.Player.csproj">
-      <Project>{D906C957-2A95-9D78-C11B-9EE52FB76822}</Project>
-      <Name>UniTask.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{1E98675B-9709-95C9-B1BF-C42FB83C93AE}</Project>
-      <Name>Unity.VisualScripting.State.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.Player.csproj">
-      <Project>{E8C052D5-141A-9E5A-9E91-93F85650ED6E}</Project>
-      <Name>Cinemachine.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

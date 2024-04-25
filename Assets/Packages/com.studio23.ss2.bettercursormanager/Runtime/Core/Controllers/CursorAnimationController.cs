@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using Studio23.SS2.BetterCursor.Data;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,29 +13,30 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private int _cursorIndex;
         private CursorData _cursorData;
+        private CancellationTokenSource _updateCursorCancel;
 
         void Awake()
         {
             _iconHolder = GetComponent<Image>();
+            _updateCursorCancel = new CancellationTokenSource();
         }
 
         internal void Initialize(CursorData cursorData)
         {
             _cursorData = cursorData;
-            StopAllCoroutines();
-            StartCoroutine(UpdateCursorTextures(cursorData.CursorTextures, cursorData.TextureUpdateDelay));
+            _updateCursorCancel?.Cancel();
+            _updateCursorCancel = new CancellationTokenSource();
+            UpdateCursorTextures(cursorData.CursorTextures, cursorData.TextureUpdateDelay);
         }
 
-        private IEnumerator UpdateCursorTextures(Sprite[] sprites, float updateDelay)
+        private async void UpdateCursorTextures(Sprite[] sprites, float updateDelay)
         {
             _cursorIndex = 0;
             _iconHolder.sprite = sprites[_cursorIndex];
-            while (sprites.Length > 1)
+            while (!_updateCursorCancel.IsCancellationRequested)
             {
-                yield return new WaitForSeconds(updateDelay);
-
+                await UniTask.WaitForFixedUpdate();
                 _cursorIndex++;
-
                 if (_cursorIndex >= sprites.Length)
                 {
                     _cursorIndex = 0;

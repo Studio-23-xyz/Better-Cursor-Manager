@@ -837,6 +837,10 @@
       <Project>{A7A588D4-00DD-4C35-83B2-27D3D5B51017}</Project>
       <Name>Unity.InputSystem.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="UniTask.Player.csproj">
+      <Project>{D906C957-2A95-9D78-C11B-9EE52FB76822}</Project>
+      <Name>UniTask.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{7D6C8AB0-1846-F5FB-3331-69FA479D4CC6}</Project>
       <Name>UnityEngine.UI.Player</Name>
