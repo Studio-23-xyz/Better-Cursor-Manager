@@ -14,11 +14,13 @@ namespace Studio23.SS2.BetterCursor.Core
         private Camera _camera;
         private readonly List<RaycastResult> _raycastResults = new();
         private CursorLocoMotionController _cursorLocoMotionController;
+        private BetterCursor _betterCursor;
 
-        internal void Initialize(LayerMask layerMask, float castRadius)
+        internal void Initialize(LayerMask layerMask, float castRadius, BetterCursor betterCursor)
         {
             _layerMask = layerMask;
             _sphereCastRadius = castRadius;
+            _betterCursor = betterCursor;
         }
 
         private void Start()
@@ -35,7 +37,7 @@ namespace Studio23.SS2.BetterCursor.Core
         {
             IHoverable currentHoveredObject = null;
 
-            if (BetterCursor.Instance.UiOnHoverEnabled)
+            if (_betterCursor.UiOnHoverEnabled)
                 currentHoveredObject = GetHoveredUIObject()?.GetComponent<IHoverable>();
             else
                 currentHoveredObject = GetHoveredObject()?.GetComponent<IHoverable>();
@@ -63,7 +65,7 @@ namespace Studio23.SS2.BetterCursor.Core
                 Debug.LogError($"Main Camera Not Found");
             }
 
-            var ray = _camera.ScreenPointToRay(BetterCursor.Instance.GetCursorImagePosition());
+            var ray = _camera.ScreenPointToRay(_betterCursor.GetCursorImagePosition());
             if(Physics.SphereCast(ray, _sphereCastRadius, out hit, int.MaxValue, _layerMask))
                 return hit.collider.gameObject;
             return null;

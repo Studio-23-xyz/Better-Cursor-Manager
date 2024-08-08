@@ -8,8 +8,6 @@ namespace Studio23.SS2.BetterCursor.Core
 {
     public class BetterCursor : MonoBehaviour
     {
-        public static BetterCursor Instance;
-
         [SerializeField] private Canvas _canvas;
         public CursorData CurrentCursor;
 
@@ -22,23 +20,17 @@ namespace Studio23.SS2.BetterCursor.Core
         public UnityEvent OnDeviceChanged;
         private InputDevice _lastUsedDevice;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _canvas = GetComponent<Canvas>();
             _eventController = GetComponentInChildren<CursorEventController>(true);
             _locoMotionController = GetComponentInChildren<CursorLocoMotionController>(true);
             _animationController = GetComponentInChildren<CursorAnimationController>(true);
-            
-            if (Instance == null)
-                Instance = this;
-            else
-                Destroy(gameObject);
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             Cursor.visible = false;
-
             ChangeCursor(CurrentCursor);
             ChangeCursorLockState(false);
             SetupLastUsedDevice();
@@ -50,9 +42,9 @@ namespace Studio23.SS2.BetterCursor.Core
         {
             if (CurrentCursor == null) CurrentCursor = Resources.Load<CursorData>("BetterCursor/DefaultCursor");
 
-            _locoMotionController.Initialize(_canvas, CurrentCursor);
+            _locoMotionController.Initialize(_canvas, CurrentCursor, this);
             _animationController.Initialize(CurrentCursor);
-            _eventController.Initialize(CurrentCursor.HoverMask, CurrentCursor.SphereCastRadius);
+            _eventController.Initialize(CurrentCursor.HoverMask, CurrentCursor.SphereCastRadius, this);
         }
 
 
@@ -61,7 +53,7 @@ namespace Studio23.SS2.BetterCursor.Core
         ///     overall data of the cursor
         /// </summary>
         /// <param name="cursorData"></param>
-        public void ChangeCursor(CursorData cursorData)
+        public virtual void ChangeCursor(CursorData cursorData)
         {
             if (cursorData == null)
             {
@@ -77,7 +69,7 @@ namespace Studio23.SS2.BetterCursor.Core
         ///     Enable or disable Cursor image
         /// </summary>
         /// <param name="state"></param>
-        public void SetCursorVisibilityState(bool state)
+        public virtual void SetCursorVisibilityState(bool state)
         {
             _animationController.gameObject.SetActive(state);
         }
@@ -85,7 +77,7 @@ namespace Studio23.SS2.BetterCursor.Core
         ///     This method can be used to change the cursor lock state.
         /// </summary>
         /// <param name="isLocked"></param>
-        public void ChangeCursorLockState(bool isLocked)
+        public virtual void ChangeCursorLockState(bool isLocked)
         {
             Cursor.lockState = isLocked ? CursorLockMode.Locked : CursorLockMode.Confined;
         }
@@ -114,7 +106,7 @@ namespace Studio23.SS2.BetterCursor.Core
             return _locoMotionController.GetCursorImagePosition();
         }
 
-        public void UpdateCursorPosition(Vector2 cursorPos)
+        public virtual void UpdateCursorPosition(Vector2 cursorPos)
         {
             _locoMotionController.UpdateCursorPosition(cursorPos);
         }

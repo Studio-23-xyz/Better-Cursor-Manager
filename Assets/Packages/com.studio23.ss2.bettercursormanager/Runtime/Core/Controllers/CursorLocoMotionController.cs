@@ -15,6 +15,7 @@ namespace Studio23.SS2.BetterCursor.Core
         private Vector2 _minScreenBounds;
         private Vector2 _maxScreenBounds;
         private Vector2 cursorPosition;
+        private BetterCursor _betterCursor;
 
 
         private void Awake()
@@ -22,9 +23,10 @@ namespace Studio23.SS2.BetterCursor.Core
             _cursorTransform = GetComponent<RectTransform>();
         }
 
-        internal void Initialize(Canvas canvas, CursorData cursorData)
+        internal void Initialize(Canvas canvas, CursorData cursorData, BetterCursor better)
         {
             _canvas = canvas;
+            _betterCursor = better;
             _cursorTransform.sizeDelta = cursorData.PixelSize;
             _cursorTransform.pivot = cursorData.HotSpot;
             SetupBounds();
@@ -43,7 +45,7 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void UpdateCursorPosition()
         {
-            if (BetterCursor.Instance.IsController())
+            if (_betterCursor.IsController())
                 HandleControllerInput(cursorPosition);
             else
                 HandleMouseInput(cursorPosition);

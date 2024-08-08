@@ -1,6 +1,13 @@
 # Changelog
 
 
+## [v1.1.8] - 2024-08-08
+
+## Updated
+
++ Made better cursor inheritable
+
+
 ## [v1.1.7] - 2024-04-18
 
 ## Updated
