@@ -61,6 +61,8 @@ namespace Studio23.SS2.BetterCursor.Core
                 return;
             }
 
+            if(CurrentCursor == cursorData) return;
+
             CurrentCursor = cursorData;
             Initialize();
         }

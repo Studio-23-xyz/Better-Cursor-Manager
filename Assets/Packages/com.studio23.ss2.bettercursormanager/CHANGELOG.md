@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.1.9] - 2024-08-16
+
+## Updated
+
++ Added cursor sprite animation with time delay
+
 
 ## [v1.1.8] - 2024-08-08
 

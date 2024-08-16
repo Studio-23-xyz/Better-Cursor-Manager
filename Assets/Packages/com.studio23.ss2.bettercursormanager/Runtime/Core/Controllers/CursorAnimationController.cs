@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Threading;
 using Cysharp.Threading.Tasks;
@@ -21,21 +22,28 @@ namespace Studio23.SS2.BetterCursor.Core
             _updateCursorCancel = new CancellationTokenSource();
         }
 
-        internal void Initialize(CursorData cursorData)
+        void OnDisable()
+        {
+            _updateCursorCancel?.Cancel();
+            _updateCursorCancel?.Dispose();
+        }
+
+        internal async void Initialize(CursorData cursorData)
         {
             _cursorData = cursorData;
             _updateCursorCancel?.Cancel();
             _updateCursorCancel = new CancellationTokenSource();
-            UpdateCursorTextures(cursorData.CursorTextures, cursorData.TextureUpdateDelay);
+            await UpdateCursorTextures(cursorData.CursorTextures, cursorData.TextureUpdateDelay);
         }
 
-        private async void UpdateCursorTextures(Sprite[] sprites, float updateDelay)
+        private async UniTask UpdateCursorTextures(Sprite[] sprites, float updateDelay)
         {
             _cursorIndex = 0;
             _iconHolder.sprite = sprites[_cursorIndex];
             while (!_updateCursorCancel.IsCancellationRequested)
             {
-                await UniTask.WaitForFixedUpdate();
+                bool cancellationThrow = await UniTask.Delay(TimeSpan.FromSeconds(updateDelay),ignoreTimeScale:true, cancellationToken:_updateCursorCancel.Token).SuppressCancellationThrow();
+                if(cancellationThrow) break;
                 _cursorIndex++;
                 if (_cursorIndex >= sprites.Length)
                 {
