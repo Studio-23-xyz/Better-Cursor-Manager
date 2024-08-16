@@ -25,7 +25,6 @@ namespace Studio23.SS2.BetterCursor.Core
         void OnDisable()
         {
             _updateCursorCancel?.Cancel();
-            _updateCursorCancel?.Dispose();
         }
 
         internal async void Initialize(CursorData cursorData)
