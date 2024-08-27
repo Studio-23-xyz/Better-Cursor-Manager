@@ -30,7 +30,8 @@ namespace Studio23.SS2.BetterCursor.Core
 
         private void Update()
         {
-            UpdateCollision();
+            if(_betterCursor!=null)
+                UpdateCollision();
         }
 
         private void UpdateCollision()
