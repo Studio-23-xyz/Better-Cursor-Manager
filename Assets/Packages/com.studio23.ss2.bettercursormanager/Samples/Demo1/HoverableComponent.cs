@@ -6,20 +6,20 @@ using UnityEngine;
 public class HoverableComponent : MonoBehaviour,IHoverable
 {
     public CursorData CursorData;
-
+    [SerializeField] private BetterCursor _betterCursor;
     private CursorData _tempData;
 
 
     public void OnHoverEnter()
     {
-        _tempData = BetterCursor.Instance.CurrentCursor;
-        BetterCursor.Instance.ChangeCursor(CursorData);
+        _tempData = _betterCursor.CurrentCursor;
+        _betterCursor.ChangeCursor(CursorData);
         Debug.Log($"<color=gray>{name}</color> : <color=yellow>On Hover Enter</color>");
     }
 
     public void OnHoverExit()
     {
-        BetterCursor.Instance.ChangeCursor(_tempData);
+        _betterCursor.ChangeCursor(_tempData);
         Debug.Log($"<color=gray>{name}</color> : <color=red>On Hover Exit</color>");
     }
 }

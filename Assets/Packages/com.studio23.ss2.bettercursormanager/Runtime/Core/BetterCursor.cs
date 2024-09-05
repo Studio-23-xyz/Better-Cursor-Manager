@@ -12,6 +12,7 @@ namespace Studio23.SS2.BetterCursor.Core
         public CursorData CurrentCursor;
 
         public bool UiOnHoverEnabled;
+        public bool EnvironmentOnHoverEnabled = true;
 
         private CursorAnimationController _animationController;
         private CursorLocoMotionController _locoMotionController;
@@ -31,7 +32,7 @@ namespace Studio23.SS2.BetterCursor.Core
         protected virtual void Start()
         {
             Cursor.visible = false;
-            ChangeCursor(CurrentCursor);
+            Initialize();
             ChangeCursorLockState(false);
             SetupLastUsedDevice();
         }
@@ -111,6 +112,16 @@ namespace Studio23.SS2.BetterCursor.Core
         public virtual void UpdateCursorPosition(Vector2 cursorPos)
         {
             _locoMotionController.UpdateCursorPosition(cursorPos);
+        }
+
+        public void ToggleOnUiHoverEnabled(bool isEnable)
+        {
+            UiOnHoverEnabled = isEnable;
+        }
+
+        public void ToggleOnEnvironmentHoverEnabled(bool isEnable)
+        {
+            UiOnHoverEnabled = isEnable;
         }
     }
 }

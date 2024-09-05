@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.1.12] - 2024-09-05
+
+## Updated
+
++ Fixed Ui Hover
+
+
+
 ## [v1.1.9] - 2024-08-16
 
 ## Updated

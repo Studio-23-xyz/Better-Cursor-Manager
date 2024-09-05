@@ -92,7 +92,7 @@ namespace Studio23.SS2.BetterCursor.Core
 
         public Vector2 GetCursorPosition()
         {
-            return _cursorPosition;
+            return cursorPosition;
         }
     }
 }

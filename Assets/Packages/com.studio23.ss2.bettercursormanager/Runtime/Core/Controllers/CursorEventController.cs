@@ -37,11 +37,15 @@ namespace Studio23.SS2.BetterCursor.Core
         private void UpdateCollision()
         {
             IHoverable currentHoveredObject = null;
+            IHoverable uiHoveredObject = null;
+            IHoverable environmentHoveredObject = null;
 
             if (_betterCursor.UiOnHoverEnabled)
-                currentHoveredObject = GetHoveredUIObject()?.GetComponent<IHoverable>();
-            else
-                currentHoveredObject = GetHoveredObject()?.GetComponent<IHoverable>();
+                uiHoveredObject = GetHoveredUIObject()?.GetComponent<IHoverable>();
+            if(_betterCursor.EnvironmentOnHoverEnabled)
+                environmentHoveredObject = GetHoveredObject()?.GetComponent<IHoverable>();
+
+            currentHoveredObject = uiHoveredObject ?? environmentHoveredObject;
 
             if (currentHoveredObject == _lastHoveredObject) return;
 
@@ -78,9 +82,9 @@ namespace Studio23.SS2.BetterCursor.Core
             {
                 position = _cursorLocoMotionController.GetCursorPosition()
             };
-
             _raycastResults.Clear(); // Clear the list before using it again
             EventSystem.current.RaycastAll(pointerEventData, _raycastResults);
+           
             if (_raycastResults.Count > 0)
                 return _raycastResults[0].gameObject;
             return null;
